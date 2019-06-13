@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    height: 100px;
+    padding: 30px 15px 0;
+    font-size: 30px;
+    text-align: left;
+    background-color: #eee;
+}
+
+main{
+    display: flex;
+    min-height: 100vh;
+    margin: 10px 0 10px 0;
+}
+.content{
+    flex: 1;
+    background-color: #eee;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#search{
+    margin: 20px;
+}
+
+#sbox{
+    outline:0;
+    font-size: 15px;
+    padding: 2px 4px;
+    height: 30px;
+    width: 300px;
+}
+
+#sbtn{
+    height: 100px;
+}
+
+.localNavigation{
+    text-align: center;
+    background-color: #888;
+    color: #fff;
+    width: 450px;
+    padding: 15px;
+}
+
+.shop_link{
+    text-align: left;
+    color: #eee;
+}
+.footer{
+    height: 70px;
+    text-align: center;
+    background-color: #eee;
+}
