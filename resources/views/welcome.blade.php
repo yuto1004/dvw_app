@@ -3,7 +3,7 @@
 <head>
    <meta charset="utf-8"/>
    <title>寄り道マップトップ</title>
-    <link rel="stylesheet" href="yorimiti_top.css">
+    <link rel="stylesheet" href="welcome.css">
 </head>
 
 <body>
