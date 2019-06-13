@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class ReviewContoller extends Controller
+class ReviewController extends Controller
 {
     //
 }
