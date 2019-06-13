@@ -8,7 +8,7 @@
 
 <body>
     <header class="header">
-       <img src="アイコン.png">
+       <img src="{{ asset('assets/images/アイコン.png') }}">
     </header>
 
     <main>
