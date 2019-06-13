@@ -8,5 +8,7 @@ use App\Http\Requests;
 
 class ShopController extends Controller
 {
-    //
+    public function welcome(){
+        return view('welcome');
+    }
 }
