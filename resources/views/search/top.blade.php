@@ -3,11 +3,13 @@
 @section('content')
     <main>
         <div class="content">
-        <script src="{{ asset('assets/javascripts/top_map.js') }}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh0c7Qd5PE6KkiO5TKpcyhNfR3nnwxdjQ&callback=initMap"
-    async defer></script> 
-    <link href="/css/top_map.css">
-    <div id="top_map"></div>
+        <link rel="stylesheet" href="/css/top_map.css">
+  <body>
+    <div id="map"></div>
+    <script src="{{ asset('assets/javascripts/topmap.js') }}"></script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh0c7Qd5PE6KkiO5TKpcyhNfR3nnwxdjQ&callback=initMap"
+    async defer></script>
+    
         </div>
 
 
