@@ -43,9 +43,12 @@
         </div>
 
         <div class="localNavigation">
+        <form id="search" action="自分のサイトURL">
+              <input id="sbox" name="s" type="text" placeholder="出発駅" />
+            </form>
             <form id="search" action="自分のサイトURL">
-              <input id="sbox" name="s" type="text" placeholder="寄り道したい駅" />
-              <input id="sbtn" type="submit" value="検索" />
+              <input id="sbox" name="s" type="text" placeholder="到着駅" />
+              <p><input id="sbtn" type="submit" value="検索" /></p>
             </form>
             <div class="shop_link">
                 <ul>
