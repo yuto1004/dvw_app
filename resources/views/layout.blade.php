@@ -21,7 +21,7 @@
 @yield('content')
 
     <footer class="footer">
-        <p>フッター</p>
+        <p>ZDC 2019年入社 Team5</p>
     </footer>
 </body>
 </html>
