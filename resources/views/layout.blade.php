@@ -9,7 +9,7 @@
 <body>
     <header class="header">
     <div class = "icon">
-       <img src="{{ asset('assets/images/アイコン.png') }}">
+       <img src="{{ asset('assets/images/icon_green.png') }}">
        </div>
        <div class = "bottons">
        <a href="#" class="btn-flat-border">ログイン</a>
