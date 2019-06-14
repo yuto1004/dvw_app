@@ -7,7 +7,7 @@ body{
     padding: 25px 15px 10px;
     font-size: 30px;
     text-align: left;
-    background-color: #eee;
+    background-color: #428ff4;
 }
 
 main{
@@ -65,5 +65,5 @@ main{
 .footer{
     height: 70px;
     text-align: center;
-    background-color: #eee;
+    background-color: #428ff4;
 }
