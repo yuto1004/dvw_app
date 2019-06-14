@@ -2,7 +2,7 @@
 <html>
 <head>
    <meta charset="utf-8"/>
-   <title>寄り道マップトップ</title>
+   <title>寄り道マップ</title>
     <link rel="stylesheet" href="/css/welcome.css">
 </head>
 
@@ -61,7 +61,7 @@
         </div>
     </main>
     <footer class="footer">
-        <p>フッター</p>
+        <p>Team5 ZDC crazies</p>
     </footer>
 </body>
 </html>
