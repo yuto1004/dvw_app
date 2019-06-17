@@ -3,6 +3,7 @@
 <head>
    <meta charset="utf-8"/>
    <title>寄り道マップ</title>
+    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="{{ asset('assets/javascripts/jquery-3.2.1.js') }}"></script>
 </head>
