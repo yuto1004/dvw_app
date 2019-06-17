@@ -6,27 +6,33 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
         name: '現在地',
         lat: 35.663621,
         lng: 139.7618,
-        url: "http://localhost:8000/"
+        url: "http://localhost:8000/",
+        image: "assets/images/アイコン.png",
+        icon: "assets/images/icon.png"
  }, {
         name: 'カレッタ汐留',
         lat: 35.664656,
         lng: 139.763185,
-        url: "http://www.caretta.jp/"
+        url: "http://www.caretta.jp/",
+        image: "assets/images/caretta.jpg"
  }, {
         name: '浜離恩寵公園',
         lat: 35.660218,
         lng: 139.763726,
-        url: "https://www.tokyo-park.or.jp/park/format/index028.html"
+        url: "https://www.tokyo-park.or.jp/park/format/index028.html",
+        image: "assets/images/koen.jpg"
  }, {
         name: '一蘭　新橋店',
         lat: 35.667301,
         lng: 139.756889,
-        url: "https://ichiran.com/shop/tokyo/shinbashi/"
+        url: "https://ichiran.com/shop/tokyo/shinbashi/",
+        image: "assets/images/itiran.jpg"
  }, {
         name: 'タミヤ プラモデルファクトリー 新橋店',
         lat: 35.664563,
         lng: 139.75529,
-        url: "https://www.tamiya-plamodelfactory.co.jp/"
+        url: "https://www.tamiya-plamodelfactory.co.jp/",
+        image: "assets/images/tamiya.jpg"
  },
 ];
  
@@ -48,6 +54,7 @@ function initMap() {
  
      infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
          content: '<div class="sample">' + 
+         '<img src = ' + markerData[i]['image'] + '>' +
          '<a href =' + markerData[i]['url'] + '>' + '<br>' + 
          markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
        });
@@ -55,16 +62,17 @@ function initMap() {
  
      markerEvent(i); // マーカーにクリックイベントを追加
  }
- 
+ marker[0].setOptions({// TAM 東京のマーカーのオプション設定
+       icon: {
+        url: markerData[0]['icon']// マーカーの画像を変更
+      }
+  });
    
 }
  
 // マーカーにクリックイベントを追加
 function markerEvent(i) {
-    marker[i].addListener('mouseover', function() { // マーカーをクリックしたとき
+    marker[i].addListener('click', function() { // マーカーをクリックしたとき
       infoWindow[i].open(map, marker[i]); // 吹き出しの表示
   });
-  marker[i].addListener('click', function() { // マーカーをクリックしたとき
-    infoWindow[i].close(map, marker[i]); // 吹き出しの表示
-});
 }
