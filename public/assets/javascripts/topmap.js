@@ -4,8 +4,8 @@ var infoWindow = [];
 var markerData = [ // マーカーを立てる場所名・緯度・経度
   {
         name: '現在地',
-        lat: 35.663621,
-        lng: 139.7618,
+        lat: 35.6644419,
+        lng: 139.76238680000006,
         url: "http://localhost:8000/",
         image: "assets/images/アイコン.png",
         icon: "assets/images/icon.png"
