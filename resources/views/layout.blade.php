@@ -14,6 +14,19 @@
     <div class = "icon">
        <img src="{{ asset('assets/images/icon_green.png') }}">
        </div>
+       @if (Auth::check())
+       <div class = "bottons">
+        <nav>
+          <ul>
+           <li><a class="current" href="/">Home</a></li>
+           <li><a href="#">News</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="/login">Post</a></li>
+           <li><a href="/register">Sign out</a></li>
+          </ul>
+        </nav>
+       </div>
+       @else
        <div class = "bottons">
         <nav>
           <ul>
@@ -25,6 +38,7 @@
           </ul>
         </nav>
        </div>
+       @endif
     </header>
 
 @yield('content')
