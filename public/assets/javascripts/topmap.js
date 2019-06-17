@@ -6,27 +6,27 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
         name: '現在地',
         lat: 35.663621,
         lng: 139.7618,
-        url: "https://tower.jp/"
+        url: "http://localhost:8000/"
  }, {
         name: 'カレッタ汐留',
         lat: 35.664656,
         lng: 139.763185,
-        url: "https://tower.jp/"
+        url: "http://www.caretta.jp/"
  }, {
-        name: '浜里恩寵公園',
+        name: '浜離恩寵公園',
         lat: 35.660218,
         lng: 139.763726,
-        url: "https://tower.jp/"
+        url: "https://www.tokyo-park.or.jp/park/format/index028.html"
  }, {
         name: '一蘭　新橋店',
         lat: 35.667301,
         lng: 139.756889,
-        url: "https://tower.jp/"
+        url: "https://ichiran.com/shop/tokyo/shinbashi/"
  }, {
         name: 'タミヤ プラモデルファクトリー 新橋店',
         lat: 35.664563,
         lng: 139.75529,
-        url: "https://tower.jp/"
+        url: "https://www.tamiya-plamodelfactory.co.jp/"
  },
 ];
  
@@ -47,7 +47,9 @@ function initMap() {
        });
  
      infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-         content: '<div class="sample">' + markerData[i]['url'] + '<br>' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+         content: '<div class="sample">' + 
+         '<a href =' + markerData[i]['url'] + '>' + '<br>' + 
+         markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
        });
 
  
