@@ -4,7 +4,8 @@
    <meta charset="utf-8"/>
    <title>寄り道マップ</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="{{ asset('assets/javascripts/jquery-3.2.1.js') }}"></script>
+    <script src="{{ asset('assets/javascripts/jquery-3.4.1.js') }}"></script>
+
 </head>
 
 <body>
