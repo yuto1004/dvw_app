@@ -4,7 +4,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::auth();
 
-    Route::get('/', 'ShopController@welcome');
+    Route::get('/', 'MapController@welcome');
 
     Route::get('/map/search/', 'MapController@search');
 
