@@ -7,7 +7,7 @@ body{
     padding: 30px 15px 0;
     font-size: 30px;
     text-align: left;
-    background-color: #b28653;
+    background-color: #333333;
 }
 .icon{
     float: left;
@@ -18,33 +18,44 @@ body{
     font-size: 17px;
     float: right;
 }
-.btn-flat-border {
-    display: inline-block;
-    padding: 0.3em 1em;
-    text-decoration: none;
-    color: #67c5ff;
-    border: solid 2px #67c5ff;
-    border-radius: 3px;
-    transition: .4s;
+nav{
+    text-align: center;
   }
-  
-  .btn-flat-border:hover {
-    background: #67c5ff;
-    color: white;
+  nav ul{
+    margin: 0 ;
+    padding: 0 ;
+  }
+  nav li{
+    list-style: none;
+    display: inline-block;
+    width: 10%;
+    min-width: 90px;
+  }
+  nav li:not(:last-child){
+    border-right:2px solid #ddd;
+  }
+  nav a{
+    text-decoration: none;
+    color: #ffff;
+  }
+  nav a.current{
+    color: #00B0F0;
+    border-bottom:2px solid #00B0F0;
+  }
+  nav a:hover{
+    color:#F7CB4D;
+    border-bottom:2px solid #F7CB4D;
   }
 
 main{
     display: flex;
     min-height: 100vh;
-    margin: 10px 0 10px 0;
-    background-color: rgb(31, 218, 93)
+    margin: 0;
 }
 .content{
     flex: 1;
-    background-color: rgb(31, 218, 93);
     text-align: center;
-    margin: 50px;
-    margin-right: 10px;
+    margin: 20px;
 }
 
 #search{
@@ -78,7 +89,7 @@ display: inline-block;
 
 .localNavigation{
     text-align: center;
-    color: rgb(31, 218, 93);
+    background-color: #333333;
     width: 450px;
     padding: 30px;
 }
@@ -90,5 +101,6 @@ display: inline-block;
 .footer{
     height: 70px;
     text-align: center;
-    background-color: #b28653;
+    background-color: #333333;
+    color: #ffff;
 }
