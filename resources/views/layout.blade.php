@@ -13,8 +13,15 @@
        <img src="{{ asset('assets/images/icon_green.png') }}">
        </div>
        <div class = "bottons">
-       <a href="#" class="btn-flat-border">ログイン</a>
-       <a href="#" class="btn-flat-border">新規登録</a>
+        <nav>
+          <ul>
+           <li><a class=”current” href=”#”>Home</a></li>
+           <li><a href=”#”>News</a></li>
+           <li><a href=”#”>About</a></li>
+           <li><a href=”#”>Sign in</a></li>
+           <li><a href=”#”>Sign up</a></li>
+          </ul>
+        </nav>
        </div>
     </header>
 
