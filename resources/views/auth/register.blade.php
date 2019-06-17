@@ -1,37 +1,32 @@
 @extends('layout')
 
 @section('content')
-<div class="contents row">
-    <h2>新規登録</h2>
+<main>
+<div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form1">
 
-    {{ Form::open() }}
-        <div class="field">
-            <label>ニックネーム <em>(6文字以内)</em><label><br>
-            <input type='text' name="name" autofocus="autofocus">
-        </div>
+      <p class="name">
+        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+      </p>
 
-        <div class="field">
-            <label>Eメール</label>
-            <input type="email" name="email">
-        </div>
+      <p class="email">
+        <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+      </p>
 
-        <div class="field">
-            <label>パスワード</label>
-            @if (false)
-                <em>(6文字以上で設定してください)</em>
-            @endif
-            <br />
-            <input type="password" name="password" autocomplete="off">
-        </div>
+      <p class="password">
+        <input name="password" type="password" class="validate[required,length[6,300]] feedback-input" id="password" placeholder="Password"/>
+      </p>
 
-        <div class="field">
-            <label>パスワード確認<em>(コピーしないで入力してください)</em></label><br>
-            <input type="password" name="password_confirmation" autocomplete="off">
-        </div>
+      <p class="password_confirmation">
+        <input name="password_confirmation" type="password" class="validate[required,length[6,300]] feedback-input" id="password_confirmation" placeholder="Password confirmation"/>
+      </p>
 
-        <div class="actions">
-            <input type="submit" value="Sign up">
-        </div>
-    {{ Form::close() }}
+      <div class="submit">
+        <input type="submit" value="Sign up" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
 </div>
+</main>
 @endsection
