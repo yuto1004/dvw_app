@@ -22,18 +22,30 @@
 
               <div class="contents">
                 <div class="left">
-                  <p>駅名絞りコンテンツ</p>
+                  <form action="" method="post">
+                    <p>
+                    <input type="checkbox" name="genre" value="1">汐留
+                    <input type="checkbox" name="genre" value="2">青山一丁目
+                    <input type="checkbox" name="genre" value="3">表参道
+                    <input type="checkbox" name="genre" value="3">代々木上原
+                    <input type="checkbox" name="genre" value="3">代々木八幡
+                    </p>
+                    <p>
+                    <input id="sbtn" type="submit" value="検索">
+                    </p>
+                  </form>
                 </div>
                 <div class="right">
-                <form action="cgi-bin/abc.cgi" method="post">
-                  <p>
-                  <input type="checkbox" name="genre" value="1">Live House
-                  <input type="checkbox" name="genre" value="2">Hamburger Shop
-                  <input type="checkbox" name="genre" value="3">Cat Cafe
-                  </p>
-                  <p>
-                  <input id="sbtn" type="submit" value="検索">
-                  </p>
+                  <form action="" method="post">
+                    <p>
+                    <input type="checkbox" name="genre" value="1">Live House
+                    <input type="checkbox" name="genre" value="2">Hamburger Shop
+                    <input type="checkbox" name="genre" value="3">Cat Cafe
+                    </p>
+                    <p>
+                    <input id="sbtn" type="submit" value="検索">
+                    </p>
+                  </form>
                 </div>
               </div>
             </div>
