@@ -50,7 +50,8 @@
         </div>
 
         <div class="submit">
-            <input type="submit" value="Sign up" id="button-blue">
+            <input type="submit" value="Sign up" id="button-blue-signup">
+            <div class="ease"></div>
         </div>
     </div>
 </div>
