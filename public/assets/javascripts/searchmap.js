@@ -1,6 +1,5 @@
 var map;
 
-      
 var marker = [];
 var infoWindow = [];
 var markerData = [ // マーカー情報
@@ -86,7 +85,7 @@ function initMap () {
 
   markerEvent(i); // マーカーにクリックイベントを追加
   }
-}
+
 
 
   marker[0].setOptions({// マーカーのオプション設定
@@ -100,6 +99,7 @@ function markerEvent(i) {
 marker[i].addListener('click', function() { // マーカーをクリックしたとき
  infoWindow[i].open(map, marker[i]); // 吹き出しの表示
 });
+}
 }
 
 
