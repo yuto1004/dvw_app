@@ -6,13 +6,18 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Shop;
+
 class MapController extends Controller
 {
+
     public function welcome(){
-        return view('search.top');
+        $shops = Shop::all();
+        return view('search.top')->with('shops',$shops);
     }
     
     public function search(){
-        return view('search.search');
+        $shops = Shop::all();
+        return view('search.search')->with('shops',$shops);
     }
 }

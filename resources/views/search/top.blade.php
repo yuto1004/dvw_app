@@ -17,11 +17,11 @@
               <p><input id="sbtn" type="submit" value="検索" /></p>
             </form>
             <div class="shop_link">
-                <ul>
-                    <li>店名
-                        <a href = "URL">店名のリンク</a>
-                    </li>
-                </ul>
+               @foreach($shops as $shop)
+                 <p>
+                 <a href = {{$shop->link}}>{{$shop->shop_name}}</a>
+                 </p>
+               @endforeach
             </div>
         </div>
     </main>
