@@ -25,7 +25,15 @@
                   <p>駅名絞りコンテンツ</p>
                 </div>
                 <div class="right">
-                  <p>生搾り牛乳</p>
+                <form action="cgi-bin/abc.cgi" method="post">
+                  <p>
+                  <input type="checkbox" name="genre" value="1">Live House
+                  <input type="checkbox" name="genre" value="2">Hamburger Shop
+                  <input type="checkbox" name="genre" value="3">Cat Cafe
+                  </p>
+                  <p>
+                  <input id="sbtn" type="submit" value="検索">
+                  </p>
                 </div>
               </div>
             </div>
