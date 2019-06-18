@@ -28,33 +28,32 @@
       {{ Form::close() }}
 </div -->
 {{ Form::open() }}
-        <div class="field">
-            <label>Nickname <em>(6 characters maximum)</em><label><br>
-            <input type='text' name="name" autofocus="autofocus">
+<div id="form-main">
+  <div id="form-div">
+        <div class="name">
+            <input type='text' name="name" id="name" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" autofocus="autofocus" placeholder="Name">
         </div>
 
-        <div class="field">
-            <label>Email</label>
-            <input type="email" name="email">
+        <div class="email">
+            <input type="email" name="email" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email">
         </div>
 
-        <div class="field">
-            <label>Password</label>
+        <div class="password">
             @if (false)
                 <em>(6 characters minimum)</em>
             @endif
-            <br />
-            <input type="password" name="password" autocomplete="off">
+            <input type="password" name="password" autocomplete="off" class="validate[required,length[6,300]] feedback-input" id="password" placeholder="Password">
         </div>
 
-        <div class="field">
-            <label>password confirmation</label><br>
-            <input type="password" name="password_confirmation" autocomplete="off">
+        <div class="password_confirmation">
+            <input type="password" name="password_confirmation" autocomplete="off" class="validate[required,length[6,300]] feedback-input" id="password_confirmation" placeholder="Password confirmation">
         </div>
 
-        <div class="actions">
-            <input type="submit" value="Sign up">
+        <div class="submit">
+            <input type="submit" value="Sign up" id="button-blue">
         </div>
+    </div>
+</div>
     {{ Form::close() }}
 </main>
 @endsection
