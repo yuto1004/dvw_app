@@ -2,10 +2,9 @@
 
 @section('content')
 <main>
-<div id="form-main">
+<!-- div id="form-main">
   <div id="form-div">
-    <form class="form" id="form1">
-
+    {{ Form::open() }}
       <p class="name">
         <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
       </p>
@@ -26,7 +25,74 @@
         <input type="submit" value="Sign up" id="button-blue"/>
         <div class="ease"></div>
       </div>
-    </form>
-</div>
+      {{ Form::close() }}
+</div -->
+{{ Form::open() }}
+        <div class="field">
+            <label>Nickname <em>(6 characters maximum)</em><label><br>
+            <input type='text' name="name" autofocus="autofocus">
+        </div>
+
+        <div class="field">
+            <label>Email</label>
+            <input type="email" name="email">
+        </div>
+
+        <div class="field">
+            <label>Password</label>
+            @if (false)
+                <em>(6 characters minimum)</em>
+            @endif
+            <br />
+            <input type="password" name="password" autocomplete="off">
+        </div>
+
+        <div class="field">
+            <label>password confirmation</label><br>
+            <input type="password" name="password_confirmation" autocomplete="off">
+        </div>
+
+        <div class="actions">
+            <input type="submit" value="Sign up">
+        </div>
+    {{ Form::close() }}
 </main>
 @endsection
+
+<!--picTweetより転載
+@section('content')
+<div class="contents row">
+    <h2>Sign up</h2>
+
+    {{ Form::open() }}
+        <div class="field">
+            <label>Nickname <em>(6 characters maximum)</em><label><br>
+            <input type='text' name="name" autofocus="autofocus">
+        </div>
+
+        <div class="field">
+            <label>Email</label>
+            <input type="email" name="email">
+        </div>
+
+        <div class="field">
+            <label>Password</label>
+            @if (false)
+                <em>(6 characters minimum)</em>
+            @endif
+            <br />
+            <input type="password" name="password" autocomplete="off">
+        </div>
+
+        <div class="field">
+            <label>password confirmation</label><br>
+            <input type="password" name="password_confirmation" autocomplete="off">
+        </div>
+
+        <div class="actions">
+            <input type="submit" value="Sign up">
+        </div>
+    {{ Form::close() }}
+</div>
+@endsection
+-->

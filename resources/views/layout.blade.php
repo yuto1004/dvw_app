@@ -22,8 +22,8 @@
            <li><a class="current" href="/">Home</a></li>
            <li><a href="#">News</a></li>
            <li><a href="#">About</a></li>
-           <li><a href="/login">Post</a></li>
-           <li><a href="/register">Sign out</a></li>
+           <li><a href="/post">Post</a></li>
+           <li><a href="/logout">Sign out</a></li>
           </ul>
         </nav>
        </div>
