@@ -3,38 +3,67 @@ var map;
 var marker = [];
 var infoWindow = [];
 var markerData = [ // マーカー情報
-  {
-        name: '現在地',
-        lat: 35.6644419,
-        lng: 139.76238680000006,
-        url: "http://localhost:8000/",
-        image: "assets/images/アイコン.png",
-        icon: "assets/images/icon.png"
- }, {
-        name: 'カレッタ汐留',
-        lat: 35.664656,
-        lng: 139.763185,
-        url: "http://www.caretta.jp/",
-        image: "assets/images/caretta.jpg"
- }, {
-        name: '浜離恩寵公園',
-        lat: 35.660218,
-        lng: 139.763726,
-        url: "https://www.tokyo-park.or.jp/park/format/index028.html",
-        image: "assets/images/koen.jpg"
- }, {
-        name: '一蘭　新橋店',
-        lat: 35.667301,
-        lng: 139.756889,
-        url: "https://ichiran.com/shop/tokyo/shinbashi/",
-        image: "assets/images/itiran.jpg"
- }, {
-        name: 'タミヤ プラモデルファクトリー 新橋店',
-        lat: 35.664563,
-        lng: 139.75529,
-        url: "https://www.tamiya-plamodelfactory.co.jp/",
-        image: "assets/images/tamiya.jpg"
- },
+    {
+        name: ' Blue Note Tokyo',
+        lat: 35.6612017,
+        lng: 139.7162369,
+        url: "http://www.bluenote.co.jp/jp/",
+        image: "http://localhost:8000/assets/images/bluenote.jpg",
+    }, {
+        name: 'BODY & SOUL',
+        lat: 35.660008,
+        lng: 139.71517700000004,
+        url: "http://www.bodyandsoul.co.jp/ ",
+        image: "http://localhost:8000/assets/images/bodysoul.jpg"
+     }, {
+            name: '南青山MANDALA',
+            lat: 35.6680223,
+            lng: 139.71709950000002,
+            url: "https://mandala.gr.jp/aoyama/index.html",
+            image: "http://localhost:8000/assets/images/mandala.jpg"
+     }, {
+            name: 'CROCODILE',
+            lat: 35.6643894,
+            lng: 139.70264020000002,
+            url: "http://www.crocodile-live.jp/",
+            image: "http://localhost:8000/assets/images/crocodile.jpg"
+     }, {
+            name: 'Zimagine',
+            lat: 35.6705102,
+            lng: 139.71715519999998,
+            url: "http://zimagine.genonsha.co.jp/",
+            image: "http://localhost:8000/assets/images/zimagine.jpg"
+     }, {
+        name: 'THE BURGER STAND FELLOWS',
+        lat: 35.6650684,
+        lng: 139.71022119999998,
+        url: "http://www.fellows-burger.com/",
+        image: "http://localhost:8000/assets/images/burger_fellows.jpg"
+    }, {
+        name: 'ザ グレートバーガー',
+        lat: 35.6662808,
+        lng: 139.70464059999995,
+        url: "http://www.the-great-burger.com",
+        image: "http://localhost:8000/assets/images/greatburger.png"
+    }, {
+        name: 'cafe Hohokam',
+        lat: 35.6703753,
+        lng: 139.70741529999998,
+        url: "http://www.cafe-hohokam.com/",
+        image: "http://localhost:8000/assets/images/hohokam.jpg"
+    }, {
+        name: 'the 3rd Burger 青山骨董通り店',
+        lat: 35.6622816,
+        lng: 139.71181980000006,
+        url: "http://the3rdburger.com/index.html",
+        image: "http://localhost:8000/assets/images/3rd_burger.jpg"
+    }, {
+        name: 'ゴールデンブラウン',
+        lat: 35.6668674,
+        lng: 139.70948309999994,
+        url: "http://www.omotesandohills.com/shopdetails/index.php?sid=163",
+        image: "http://localhost:8000/assets/images/golden_brown.png"
+    },
 ];
 
 function initMap () {
