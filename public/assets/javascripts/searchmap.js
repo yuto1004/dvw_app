@@ -1,30 +1,116 @@
+var map;
+
+      
+var marker = [];
+var infoWindow = [];
+var markerData = [ // マーカー情報
+  {
+        name: '現在地',
+        lat: 35.6644419,
+        lng: 139.76238680000006,
+        url: "http://localhost:8000/",
+        image: "assets/images/アイコン.png",
+        icon: "assets/images/icon.png"
+ }, {
+        name: 'カレッタ汐留',
+        lat: 35.664656,
+        lng: 139.763185,
+        url: "http://www.caretta.jp/",
+        image: "assets/images/caretta.jpg"
+ }, {
+        name: '浜離恩寵公園',
+        lat: 35.660218,
+        lng: 139.763726,
+        url: "https://www.tokyo-park.or.jp/park/format/index028.html",
+        image: "assets/images/koen.jpg"
+ }, {
+        name: '一蘭　新橋店',
+        lat: 35.667301,
+        lng: 139.756889,
+        url: "https://ichiran.com/shop/tokyo/shinbashi/",
+        image: "assets/images/itiran.jpg"
+ }, {
+        name: 'タミヤ プラモデルファクトリー 新橋店',
+        lat: 35.664563,
+        lng: 139.75529,
+        url: "https://www.tamiya-plamodelfactory.co.jp/",
+        image: "assets/images/tamiya.jpg"
+ },
+];
+
 function initMap () {
-    var directionsDisplay;
-    var directionsService = new google.maps.DirectionsService();
-    var map;
+  var directionsDisplay;
+      var directionsService = new google.maps.DirectionsService();
+      // mapの表示時の中心点を決めている(ルート案内に失敗したときのデフォルト画面)
+      directionsDisplay = new google.maps.DirectionsRenderer();
+      var mapOptions = {
+          zoom: 7,
+          center: new google.maps.LatLng(35.6644419, 139.76238680000006)
+      };
+  
+      // mapの表示
+      map = new google.maps.Map(document.getElementById("searchmap"), mapOptions);
+  directionsDisplay.setMap(map);
 
-    // mapの表示時の中心点を決めている(ルート案内に失敗したときのデフォルト画面)
-    directionsDisplay = new google.maps.DirectionsRenderer();
-    var mapOptions = {
-        zoom: 7,
-        center: new google.maps.LatLng(35.6644419, 139.76238680000006)
-    }
+      // directionServiceに渡す変数
+      // 出発地点、目的地、移動方法等を定義する
+      var request = {
+          origin: new google.maps.LatLng(35.6644419, 139.76238680000006),
+          destination: new google.maps.LatLng(35.6698116,139.6869656),
+          travelMode: google.maps.TravelMode.WALKING
+      };
+  
+      directionsService.route(request, function(result, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+              directionsDisplay.setDirections(result);
+          }
+      });
 
-    // mapの表示
-    map = new google.maps.Map(document.getElementById("searchmap"), mapOptions);
-directionsDisplay.setMap(map);
 
-    // directionServiceに渡す変数
-    // 出発地点、目的地、移動方法等を定義する
-    var request = {
-        origin: new google.maps.LatLng(35.6644419, 139.76238680000006),
-        destination: new google.maps.LatLng(35.6698116,139.6869656),
-        travelMode: google.maps.TravelMode.WALKING
-    }
 
-    directionsService.route(request, function(result, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(result);
-        }
-    });
+  //ここからマーカー処理
+  for (var i = 0; i < markerData.length; i++) {
+    var markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
+    marker[i] = new google.maps.Marker({ // マーカーの追加
+     position: markerLatLng, // マーカーを立てる位置を指定
+        map: map // マーカーを立てる地図を指定
+   });
+
+   infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+    content: '<div class="sample">' + 
+    '<img src = ' + markerData[i]['image'] + '>' +
+    '<a href =' + markerData[i]['url'] + '>' + '<br>' + 
+    markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+  });
+
+
+  markerEvent(i); // マーカーにクリックイベントを追加
+  }
 }
+
+
+  marker[0].setOptions({// マーカーのオプション設定
+  icon: {
+   url: markerData[0]['icon']// マーカーの画像を変更
+  }
+  });
+
+// マーカーにクリックイベントを追加
+function markerEvent(i) {
+marker[i].addListener('click', function() { // マーカーをクリックしたとき
+ infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+});
+}
+
+
+      
+  
+$(window).on("load", function() {
+    $("li").on("click", function() {
+        $("li.selected").removeClass("selected");
+        $(this).addClass("selected");
+        $(".contents div").hide(); // 二つの要素を非表示にする
+        $("." + this.id).show(); // クリックされたボタンに対応する要素を表示する
+    });
+  });
+  

@@ -39,7 +39,7 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
 function initMap() {
  // 地図の作成
     var mapLatLng = new google.maps.LatLng({lat: markerData[0]['lat'], lng: markerData[0]['lng']}); // 緯度経度のデータ作成
-   map = new google.maps.Map(document.getElementById('map'), { // #sampleに地図を埋め込む
+   map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
      center: mapLatLng, // 地図の中心を指定
       zoom: 15 // 地図のズームを指定
    });
