@@ -46,12 +46,8 @@ nav{
     text-decoration: none;
     color: #ffff;
   }
-  nav a.current{
-    color: #00B0F0;
-    border-bottom:2px solid #00B0F0;
-  }
+
   nav a:hover{
-    color:#F7CB4D;
     border-bottom:2px solid #F7CB4D;
   }
 
@@ -64,6 +60,13 @@ main{
     flex: 1;
     text-align: center;
     margin: 20px;
+}
+
+.localNavigation{
+  text-align: center;
+  background-color: #333333;
+  width: 40%;
+  padding: 30px;
 }
 
 #search{
@@ -95,17 +98,22 @@ display: inline-block;
   color: white;
 }
 
-.localNavigation{
-    text-align: center;
-    background-color: #333333;
-    width: 450px;
-    padding: 30px;
-}
-
 .shop_link{
     text-align: left;
     color: rgb(48, 117, 207);
 }
+
+.shop_link a:link {
+   color: rgb(180, 180, 180);
+}
+.shop_link a:visited {
+  color: #889786;
+}
+
+.shop_link a:hover {
+  color: #fff;
+}
+
 .footer{
     width: 100%;
     text-align: center;
