@@ -10,6 +10,7 @@
 </head>
 
 <body>
+<div class="wrapper">
     <header class="header">
     <div class = "icon">
        <img src="{{ asset('assets/images/icon_green.png') }}">
