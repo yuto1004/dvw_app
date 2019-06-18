@@ -22,7 +22,7 @@
            <li><a class="current" href="/">Home</a></li>
            <li><a href="#">News</a></li>
            <li><a href="#">About</a></li>
-           <li><a href="/post">Post</a></li>
+           <li><a class=post href="/review/create">Post</a></li>
            <li><a href="/logout">Sign out</a></li>
           </ul>
         </nav>
