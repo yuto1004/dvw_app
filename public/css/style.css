@@ -169,7 +169,7 @@ html{    background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat
   line-height: 22px;
   background-color: #fbfbfb;
   padding: 13px 13px 13px 54px;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
   width:100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
