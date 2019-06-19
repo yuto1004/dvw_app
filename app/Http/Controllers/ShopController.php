@@ -19,8 +19,9 @@ class ShopController extends Controller
 
     public function create()
     {
-        $genre = array_unique(Shop::$genre);
-        return view('reviews.shop_register')->with('genre',$genre);
+        $genres = Shop::groupBy('genre')->get();
+
+        return view('reviews.shop_register')->with('genres',$genres);
     }
     
 }
