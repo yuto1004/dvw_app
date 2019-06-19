@@ -3,8 +3,8 @@
 @section('content')
 <main>
 
-{{ Form::open() }}
-        <div class="field">
+
+        <!--div class="field">
             <label>Email</label><br>
             <input type="email" name="email" autofocus="autofocus">
         </div>
@@ -23,9 +23,10 @@
 
         <div class="actions">
             <input type="submit" value="Log in">
-        </div>
-    {{ Form::close() }}
-<!--div id="form-main">
+        </div>-->
+    
+    {{ Form::open() }}
+<div id="form-main">
   <div id="form-div">
     <form class="form" id="form1">
 
@@ -50,7 +51,8 @@
     </form>
 
   </div>
-</div>-->
+</div>
+{{ Form::close() }}
 </main>
 @endsection
 
