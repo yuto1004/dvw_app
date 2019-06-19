@@ -9,22 +9,23 @@
 
 
       <p class="shop_name">
+      <div class="cp_ipselect cp_sl01">
+      
+      <select required class="feedback-input-post">
+      
+      <option value="" hidden>Choose</option>
+      @foreach($shops as $shop)
+      <option value="{{$shop->id}}">{{$shop->shop_name}}</option>
+      @endforeach
+      </select>
+      
+      </div>
         <!--<input name="shop_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="shop_name" placeholder="Shop's name" />
       ここに店名のプルダウンとお店新規登録画面への遷移ボタン-->
       </p>
-<!--ここからはお店の新規登録の内容
-      <p>
-<div class="cp_ipselect cp_sl01">
-<select required class="feedback-input-post">
-  <option value="" hidden>Choose</option>
-  <option value="1">Live House</option>
-  <option value="2">Hamburger Shop</option>
-  <option value="3">Cat Cafe</option>
-  <option value="4"></option>
-</select>
-</div>
-      </p>
+<!--ここからはお店の新規登録の内容-->
 
+<!--
       <p class="address">
         <input name="address" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="address" placeholder="Address"/>
       </p>
