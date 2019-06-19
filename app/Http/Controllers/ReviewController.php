@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Review;
+use App\Shop;
 use Auth;
 
 class ReviewController extends Controller
@@ -24,7 +25,8 @@ class ReviewController extends Controller
 
   public function create()
   {
-    return view('reviews.create');
+    $shops = Shop::all();
+    return view('reviews.create')->with('shops',$shops);
   }
 
   public function store(Request $request)
