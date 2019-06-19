@@ -2,15 +2,17 @@
 
 @section('content')
 <main>
+{{ Form::open() }}
 <div id="form-main">
   <div id="form-div">
-    <form class="form" id="form1">
+    <form class="form" id="form1" action="">
 
 
       <p class="shop_name">
-        <input name="shop_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="shop_name" placeholder="Shop's name" />
+        <!--<input name="shop_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="shop_name" placeholder="Shop's name" />
+      ここに店名のプルダウンとお店新規登録画面への遷移ボタン-->
       </p>
-
+<!--ここからはお店の新規登録の内容
       <p>
 <div class="cp_ipselect cp_sl01">
 <select required class="feedback-input-post">
@@ -30,6 +32,7 @@
       <p class="link">
         <input name="link" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="link" placeholder="Link"/>
       </p>
+-->
 
       <p class="text">
         <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
@@ -42,4 +45,5 @@
     </form>
 </div>
 </main>
+{{ Form::close() }}
 @endsection
