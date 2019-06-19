@@ -1,12 +1,12 @@
 @extends('layout')
 
 @section('content')
-<div class="contents row">
-  <div class="success">
-    <h3>
-      更新が完了しました。
-    </h3>
-    <a class="btn" href="/">投稿一覧へ戻る</a>
-  </div>
+<main>
+<div id="form-main">
+  <div id="form-div">
+    <p class="text_done">
+      更新しました
+    </p>
 </div>
+</main>
 @endsection
