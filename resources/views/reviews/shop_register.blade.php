@@ -18,7 +18,11 @@
               @foreach($genres as $genre)
               <option value="{{$genre->genre}}">{{$genre->genre}}</option>
               @endforeach
+              <option value="others">Others</option>
           </select>
+          @if
+          <!--Otherが選ばれた時にここに新規ジャンルのテキストボックスを出したい-->
+          @endif
         </div>
       </p>
 
