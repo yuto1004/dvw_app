@@ -20,20 +20,9 @@
       </select>
       
       </div>
-        <!--<input name="shop_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="shop_name" placeholder="Shop's name" />
-      ここに店名のプルダウンとお店新規登録画面への遷移ボタン-->
-      </p>
-<!--ここからはお店の新規登録の内容-->
-
-<!--
-      <p class="address">
-        <input name="address" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="address" placeholder="Address"/>
+        <!--ここに店名のプルダウンとお店新規登録画面への遷移ボタン-->
       </p>
 
-      <p class="link">
-        <input name="link" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="link" placeholder="Link"/>
-      </p>
--->
 
       <p class="text">
         <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
