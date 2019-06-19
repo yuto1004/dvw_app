@@ -1,3 +1,6 @@
+@extends('layout')
+
+@section('content')
 <main>
 <div id="form-main">
   <div id="form-div">
@@ -12,8 +15,8 @@
         <div class="cp_ipselect cp_sl01">
           <select required class="feedback-input-post">
               <option value="" hidden>Choose</option>
-              @foreach('$genres as $genre')
-              <option value="{{$genre}}">{{$genre}}</option>
+              @foreach($genres as $genre)
+              <option value="{{$genre->genre}}">{{$genre->genre}}</option>
               @endforeach
           </select>
         </div>
@@ -34,3 +37,4 @@
     </form>
 </div>
 </main>
+@endsection

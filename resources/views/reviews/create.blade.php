@@ -17,10 +17,12 @@
       @foreach($shops as $shop)
       <option value="{{$shop->id}}">{{$shop->shop_name}}</option>
       @endforeach
+      <option value="others">Others（新規登録ボタンをクリックしてください）</option>
       </select>
       
       </div>
         <!--ここに店名のプルダウンとお店新規登録画面への遷移ボタン-->
+        <a id="sbtn" href="/shop/create">お店を新規登録する</a>
       </p>
 
 
