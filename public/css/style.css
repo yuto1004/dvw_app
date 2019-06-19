@@ -236,6 +236,32 @@ html{    background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat
   background-repeat: no-repeat;
 }
 
+#button-blue-signup{
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  float:left;
+  width: 100%;
+  border: #fbfbfb solid 4px;
+  cursor:pointer;
+  background-color: #3498db;
+  color:white;
+  font-size:24px;
+  margin: 10px;
+  padding-top:22px;
+  padding-bottom:22px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  font-weight:700;
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#button-blue-signup:hover{
+  background-color: rgba(0,0,0,0);
+  color: #0493bd;
+}
+
 .field{
     margin: 10px;
     color:#fff;
@@ -327,6 +353,7 @@ input:hover, textarea:hover,
 input:focus, textarea:focus {
   background-color:white;
 }
+
 
 #button-blue{
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
