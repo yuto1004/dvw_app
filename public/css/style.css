@@ -101,6 +101,7 @@ display: inline-block;
 }
 
 .shop_link{
+  margin-top: 50px;
   margin-left: 30px;
     text-align: left;
     color: rgb(48, 117, 207);
