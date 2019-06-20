@@ -22,13 +22,13 @@
 
               <div class="contents">
                 <div class="left">
-                  <form  method="post">
+                  <form method="get">
                     <p>
-                    <input type="radio" name="place" id="1" value="1">汐留
-                    <input type="radio" name="place" id="2" value="2">青山一丁目
-                    <input type="radio" name="place" id="3" value="3">表参道
-                    <input type="radio" name="place" id="4" value="4">代々木上原
-                    <input type="radio" name="place" id="5" value="5">代々木八幡
+                    <input type="radio" name="place" id="1" value="35.6628989, 139.7599699">汐留
+                    <input type="radio" name="place" id="2" value="35.6728567, 139.72384439999996">青山一丁目
+                    <input type="radio" name="place" id="3" value="35.6649569, 139.71193570000003">表参道
+                    <input type="radio" name="place" id="4" value="35.668988, 139.67985699999997">代々木上原
+                    <input type="radio" name="place" id="5" value="35.66966439999999, 139.68892010000002">代々木八幡
                     </p>
                     <p>
                     <input id="sbtn"  type="button" value="検索" onclick="test();">
@@ -37,14 +37,14 @@
 
                 </div>
                 <div class="right">
-                  <form action="" method="post">
+                  <form method="post">
                     <p>
                     <input type="checkbox" name="genre" value="1">Live House
                     <input type="checkbox" name="genre" value="2">Hamburger Shop
                     <input type="checkbox" name="genre" value="3">Cat Cafe
                     </p>
                     <p>
-                    <input id="sbtn" type="submit" value="検索">
+                    <input id="sbtn" type="button" value="検索" onclick="test2();">
                     </p>
                   </form>
                 </div>
