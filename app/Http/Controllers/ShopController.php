@@ -21,7 +21,7 @@ class ShopController extends Controller
     {
         $genres = Shop::groupBy('genre')->get();
 
-        return view('reviews.shop_register')->with('genres',$genres);
+        return view('shops.shop_create')->with('genres',$genres);
     }
     
 }
