@@ -1,6 +1,7 @@
 body{
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .wrapper{
@@ -415,6 +416,7 @@ input:focus, textarea:focus {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }

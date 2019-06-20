@@ -7,14 +7,15 @@
   <div class="flexbox">
     <h2>{{$name}}さんの投稿一覧</h2>
     @foreach($reviews as $review)
-    @foreach($shops as $shop)
     <section class="card">
       <img class="card-img" src="images/bear.jpg" alt="">
         <div class="card-content">
-            @if($review->shop_id == $shop->id)
-            <h1 class="card-title">{{$shop->shop_name}}</h1>
-
-            @endif
+            @foreach($shops as $shop)
+                @if($review->shop_id == $shop->id)
+                    <h1 class="card-title">{{$shop->shop_name}}</h1>
+                    @break
+            @endif        
+            @endforeach
           <p class="card-text">{{$review->review}}</p>
         </div>
         <div class="card-link">
@@ -22,7 +23,7 @@
          </div>
     </section>
     @endforeach
-    @endforeach
+    {{$reviews->render()}}
   </div>
 </div>
 </main>
