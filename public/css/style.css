@@ -166,7 +166,11 @@ html{    background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat
 }
 
 .text_done{
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
   text-align: center;
+  color: #fff;
 }
 
 .feedback-input {
@@ -398,5 +402,57 @@ input:focus, textarea:focus {
 }
 /*ここまでログインと新規*/
 
+/*ここからマイページ*/
+.flexbox{
+  background-color:rgba(72,72,72,0.4);
+  padding-left:35px;
+  padding-right:35px;
+  padding-top:35px;
+  padding-bottom:50px;
+  width: 750px;
+  justify-content: center;
+  left: 50;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
 
-/* チェックボックス */
+.card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
+}
