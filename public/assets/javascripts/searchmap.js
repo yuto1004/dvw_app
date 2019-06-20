@@ -99,9 +99,11 @@ function initMap () {
     var markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
     marker[i] = new google.maps.Marker({ // マーカーの追加
      position: markerLatLng, // マーカーを立てる位置を指定
-        map: map // マーカーを立てる地図を指定
+        map: map, // マーカーを立てる地図を指定
+        animation: google.maps.Animation.DROP
    });
-
+   
+   
    infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
     content: '<div class="sample">' + 
     '<img src = ' + markerData[i]['image'] + '>' +
@@ -113,21 +115,22 @@ function initMap () {
   markerEvent(i); // マーカーにクリックイベントを追加
   }
 
-
-
-  marker[0].setOptions({// マーカーのオプション設定
-  icon: {
-   url: markerData[0]['icon']// マーカーの画像を変更
-  }
-  });
-
 // マーカーにクリックイベントを追加
 function markerEvent(i) {
-marker[i].addListener('click', function() { // マーカーをクリックしたとき
+
+marker[i].addListener('mouseover', function() { // マーカーに重ねたとき
  infoWindow[i].open(map, marker[i]); // 吹き出しの表示
 });
+marker[i].addListener('mouseout', function() { // マーカーに重ねたとき
+    infoWindow[i].close(map, marker[i]); // 吹き出しの表示
+   });
+
+
 }
 }
+
+
+
 
 
       
@@ -149,4 +152,4 @@ $(window).on("load", function() {
       map.setCenter( new google.maps.LatLng( 35.6649569, 139.71193570000003 ) ) ;
 
   }
-  
+
