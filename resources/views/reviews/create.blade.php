@@ -11,13 +11,12 @@
       <p class="shop_name">
       <div class="cp_ipselect cp_sl01">
       
-      <select required class="feedback-input-post">
-      
-      <option value="" hidden>Choose</option>
-      @foreach($shops as $shop)
-      <option value="{{$shop->id}}">{{$shop->shop_name}}</option>
-      @endforeach
-      <option value="others">Others（新規登録ボタンをクリックしてください）</option>
+      <select required class="feedback-input-post" name="shop_id">
+        <option value="" hidden>Choose</option>
+        @foreach($shops as $shop)
+        <option value="{{$shop->id}}">{{$shop->shop_name}}</option>
+        @endforeach
+        <option value="others">Others（新規登録ボタンをクリックしてください）</option>
       </select>
       
       </div>
