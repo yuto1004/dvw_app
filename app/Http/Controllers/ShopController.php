@@ -24,8 +24,17 @@ class ShopController extends Controller
         return view('shops.shop_create')->with('genres',$genres);
     }
 
-    public function store()
+    public function store(Request $request)
     {
+      Review::create(
+        array(
+          'shop_name' => $request->shop_name,
+          'genre' => $request->genre,
+          'address' => $request->address,
+          'link' => $request->link
+        )
+      );
+  
       return view('shops.shop_store');
     }
     
