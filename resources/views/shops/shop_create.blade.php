@@ -2,6 +2,7 @@
 
 @section('content')
 <main>
+{{ Form::open(['url' => '/shop', 'method' => 'post']) }}
 <div id="form-main">
   <div id="form-div">
     <form class="form" id="form1">
@@ -38,5 +39,6 @@
       </div>
     </form>
 </div>
+{{ Form::close() }}
 </main>
 @endsection

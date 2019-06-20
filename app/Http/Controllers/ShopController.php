@@ -23,5 +23,10 @@ class ShopController extends Controller
 
         return view('shops.shop_create')->with('genres',$genres);
     }
+
+    public function store()
+    {
+      return view('shops.shop_store');
+    }
     
 }
