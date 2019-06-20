@@ -33,7 +33,7 @@ class ReviewController extends Controller
   {
     Review::create(
       array(
-        //'rate' => $request->rate,
+        'rate' => $request->rate,
         'review' => $request->text,
         'user_id' => Auth::user()->id,
         'shop_id' => $request->shop_id
