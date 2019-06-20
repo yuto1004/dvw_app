@@ -2,10 +2,10 @@
 
 @section('content')
 <main>
-{{ Form::open() }}
+{{ Form::open(['url' => '/review', 'method' => 'post']) }}
 <div id="form-main">
   <div id="form-div">
-    <form class="form" id="form1" action="">
+    <div class="form" id="form1" action="">
 
 
       <p class="shop_name">
@@ -34,7 +34,7 @@
         <input type="submit" value="Post" id="button-blue"/>
         <div class="ease"></div>
       </div>
-    </form>
+    </div>
 </div>
 </main>
 {{ Form::close() }}
