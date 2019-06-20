@@ -26,7 +26,7 @@ class ShopController extends Controller
 
     public function store(Request $request)
     {
-      Review::create(
+      Shop::create(
         array(
           'shop_name' => $request->shop_name,
           'genre' => $request->genre,
