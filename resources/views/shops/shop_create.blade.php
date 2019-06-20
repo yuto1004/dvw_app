@@ -14,7 +14,7 @@
 
       <p>
         <div class="cp_ipselect cp_sl01">
-          <select required class="feedback-input-post" onchange="create_other_genre()">
+          <select required class="feedback-input-post" onchange="create_other_genre()" name ="genre">
               <option value="" hidden>Choose</option>
               @foreach($genres as $genre)
               <option value="{{$genre->genre}}">{{$genre->genre}}</option>
