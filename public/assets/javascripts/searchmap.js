@@ -94,8 +94,6 @@ function initMap () {
           }
       });
 
-
-
   //ここからマーカー処理
   for (var i = 0; i < markerData.length; i++) {
     var markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
@@ -142,4 +140,13 @@ $(window).on("load", function() {
         $("." + this.id).show(); // クリックされたボタンに対応する要素を表示する
     });
   });
+
+
+  function test(){
+      //console.log('aaa');
+      map.setZoom(15);
+      //var aaa = getElementById('5').value();
+      map.setCenter( new google.maps.LatLng( 35.6649569, 139.71193570000003 ) ) ;
+
+  }
   
