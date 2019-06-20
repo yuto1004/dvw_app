@@ -63,7 +63,7 @@ main{
 }
 
 .localNavigation{
-  text-align: center;
+  margin-left: 30px;
   background-color: #333333;
   width: 40%;
   padding: 30px;
@@ -74,13 +74,14 @@ main{
 }
 
 #sbox{
-    outline:0;
+  outline:0;
     font-size: 15px;
     padding: 2px 4px;
+    margin: 15px;
     height: 30px;
     width: 300px;
     border-radius: 5px;
-    color: #666666
+    color: #666666;
 }
 
 #sbtn{
@@ -91,6 +92,7 @@ display: inline-block;
   border: solid 2px #67c5ff;
   border-radius: 3px;
   transition: .4s;
+  margin-left: 30px;
 }
 
 #sbtn:hover {
@@ -99,6 +101,8 @@ display: inline-block;
 }
 
 .shop_link{
+  margin-top: 50px;
+  margin-left: 30px;
     text-align: left;
     color: rgb(48, 117, 207);
 }
