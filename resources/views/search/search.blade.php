@@ -40,7 +40,9 @@
               <form method="post">
                 @foreach($genres as $genre)
                   <p>
+                    @if($genre->genre != NULL)
                     <input type="checkbox" name="genre" value="{{$genre->genre}}">{{$genre->genre}}
+                    @endif
                   </p>
                 @endforeach
                 <p>
