@@ -16,8 +16,7 @@
   }
   
   .tab-menu {
-    width: 450px;
-    margin: 0 30px 30px;
+    margin: 0 30px 40px 30px;
   }
   
   .tab-menu ul {
@@ -46,7 +45,6 @@
   
   .contents {
     background-color: #fff;
-    height: 360px;
     padding: 20px;
   }
   

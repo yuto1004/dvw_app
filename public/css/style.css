@@ -72,6 +72,10 @@ main{
   padding: 30px;
 }
 
+.left{
+  line-height: 1em;
+}
+
 #search{
     margin: 0 30px 30px;
 }
@@ -93,7 +97,10 @@ main{
 }
 
 #sbtn{
-  display: inline-block;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0.5em 5em;
   text-decoration: none;
   color: #67c5ff;
@@ -111,10 +118,10 @@ main{
   max-height: 300px;
   overflow: scroll;
   border: solid 1px white;
-  margin-top: 50px;
-  margin-left: 30px;
-    text-align: left;
-    color: rgb(48, 117, 207);
+  margin: 30px;
+  padding: 15px;
+  text-align: left;
+  color: rgb(48, 117, 207);
 }
 
 .shop_link a:link {
