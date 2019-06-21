@@ -17,13 +17,13 @@
   
   .tab-menu {
     width: 450px;
-    margin: 30px;
+    margin: 0 30px 30px;
   }
   
   .tab-menu ul {
     margin: 0;
     padding: 0;
-    margin-top: 50px;
+    margin-top: 0;
   }
   
   .tab-menu li {
