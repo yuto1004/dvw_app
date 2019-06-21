@@ -108,6 +108,9 @@ main{
 }
 
 .shop_link{
+  max-height: 300px;
+  overflow: scroll;
+  border: solid 1px white;
   margin-top: 50px;
   margin-left: 30px;
     text-align: left;
