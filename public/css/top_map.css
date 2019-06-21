@@ -18,6 +18,10 @@
   .tab-menu {
     margin: 0 30px 40px 30px;
   }
+
+  .left{
+    line-height: 3px;
+  }
   
   .tab-menu ul {
     margin: 0;
