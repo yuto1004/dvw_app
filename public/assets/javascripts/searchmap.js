@@ -75,9 +75,6 @@ var markerData = [ // マーカー情報
      },
 ];
 
-
-
-
 function initMap () {
   var directionsDisplay;
       var directionsService = new google.maps.DirectionsService();
@@ -92,17 +89,24 @@ function initMap () {
       map = new google.maps.Map(document.getElementById("searchmap"), mapOptions);
   directionsDisplay.setMap(map);
 
+  //入力情報を受け取り、経路検索用の変数にセット
+  var origin =$('#hogejs').data('keiro1');
+  var destination =$('#hogejs').data('keiro2');
+
       // directionServiceに渡す変数
       // 出発地点、目的地、移動方法等を定義する
       var request = {
-          origin: new google.maps.LatLng(35.6644419, 139.76238680000006),
-          destination: new google.maps.LatLng(35.6698116,139.6869656),
+          origin: origin,
+          destination: destination, 
           travelMode: google.maps.TravelMode.WALKING
       };
-  
+
       directionsService.route(request, function(result, status) {
           if (status == google.maps.DirectionsStatus.OK) {
               directionsDisplay.setDirections(result);
+          }else{
+            alert('経路検索に失敗しました。');
+            window.location.href = '/';
           }
       });
 
@@ -175,7 +179,7 @@ var address = radioNodeList.value ;
         map.setZoom(15);
     }else {
         //失敗したとき
-        alert('住所検索に失敗しました。');
+        alert('駅をチェックして検索してください');
     }
   }
 );
