@@ -39,41 +39,41 @@ var markerData = [ // マーカー情報
             url: "http://zimagine.genonsha.co.jp/",
             image: "http://localhost:8000/assets/images/zimagine.jpg"
      }, {
-        name: 'THE BURGER STAND FELLOWS',
-        lat: 35.6650684,
-        lng: 139.71022119999998,
-        jenre:"humburger",
-        url: "http://www.fellows-burger.com/",
-        image: "http://localhost:8000/assets/images/burger_fellows.jpg"
-    }, {
-        name: 'ザ グレートバーガー',
-        lat: 35.6662808,
-        lng: 139.70464059999995,
-        jenre:"humburger",
-        url: "http://www.the-great-burger.com",
-        image: "http://localhost:8000/assets/images/greatburger.png"
-    }, {
-        name: 'cafe Hohokam',
-        lat: 35.6703753,
-        lng: 139.70741529999998,
-        jenre:"humburger",
-        url: "http://www.cafe-hohokam.com/",
-        image: "http://localhost:8000/assets/images/hohokam.jpg"
-    }, {
-        name: 'the 3rd Burger 青山骨董通り店',
-        lat: 35.6622816,
-        lng: 139.71181980000006,
-        jenre:"humburger",
-        url: "http://the3rdburger.com/index.html",
-        image: "http://localhost:8000/assets/images/3rd_burger.jpg"
-    }, {
-        name: 'ゴールデンブラウン',
-        lat: 35.6668674,
-        lng: 139.70948309999994,
-        jenre:"humburger",
-        url: "http://www.omotesandohills.com/shopdetails/index.php?sid=163",
-        image: "http://localhost:8000/assets/images/golden_brown.png"
-    },
+            name: 'THE BURGER STAND FELLOWS',
+            lat: 35.6650684,
+            lng: 139.71022119999998,
+            jenre:"humburger",
+            url: "http://www.fellows-burger.com/",
+            image: "http://localhost:8000/assets/images/burger_fellows.jpg"
+     }, {
+            name: 'ザ グレートバーガー',
+            lat: 35.6662808,
+            lng: 139.70464059999995,
+            jenre:"humburger",
+            url: "http://www.the-great-burger.com",
+            image: "http://localhost:8000/assets/images/greatburger.png"
+     }, {
+            name: 'cafe Hohokam',
+            lat: 35.6703753,
+            lng: 139.70741529999998,
+            jenre:"humburger",
+            url: "http://www.cafe-hohokam.com/",
+            image: "http://localhost:8000/assets/images/hohokam.jpg"
+     }, {
+            name: 'the 3rd Burger 青山骨董通り店',
+            lat: 35.6622816,
+            lng: 139.71181980000006,
+            jenre:"humburger",
+            url: "http://the3rdburger.com/index.html",
+            image: "http://localhost:8000/assets/images/3rd_burger.jpg"
+     }, {
+            name: 'ゴールデンブラウン',
+            lat: 35.6668674,
+            lng: 139.70948309999994,
+            jenre:"humburger",
+            url: "http://www.omotesandohills.com/shopdetails/index.php?sid=163",
+            image: "http://localhost:8000/assets/images/golden_brown.png"
+     },
 ];
 
 function initMap () {
@@ -158,11 +158,16 @@ $(window).on("load", function() {
         }
 
 function test2(){
-    marker[1].setOpacity(0.5);
-    marker[2].setOpacity(0.5);
-    marker[3].setOpacity(0.5);
-    marker[4].setOpacity(0.5);
-    marker[5].setOpacity(0.5);
+    marker[0].setAnimation(google.maps.Animation.BOUNCE);
+    marker[1].setAnimation(google.maps.Animation.BOUNCE);
+    marker[2].setAnimation(google.maps.Animation.BOUNCE);
+    marker[3].setAnimation(google.maps.Animation.BOUNCE);
+    marker[4].setAnimation(google.maps.Animation.BOUNCE);
+    marker[5].setOpacity(0.2);
+    marker[6].setOpacity(0.2);
+    marker[7].setOpacity(0.2);
+    marker[8].setOpacity(0.2);
+    marker[9].setOpacity(0.2);
     
       //if(markerData[i]['genre'] == "livehouse"){}
   }
