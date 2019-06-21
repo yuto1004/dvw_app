@@ -16,7 +16,7 @@ body{
     padding: 30px 15px 0;
     font-size: 30px;
     text-align: left;
-    background-color: #333333;
+    background-color: #F8EDBF;
 }
 .icon{
     float: left;
@@ -41,35 +41,35 @@ nav{
     min-width: 90px;
   }
   nav li:not(:last-child){
-    border-right:2px solid #ddd;
+    border-right:2px solid #292745;
   }
   nav a{
     text-decoration: none;
-    color: #ffff;
+    color: #292745;
   }
 
   nav a:hover{
-    border-bottom:2px solid #F7CB4D;
+    border-bottom:2px solid #D2E199;
   }
 
 main{
     display: flex;
     min-height: 100vh;
     margin: 0;
-    background-color: #333333;
 }
 .content{
     flex: 1;
     text-align: center;
-    margin: 30px 30px 30px 70px;
+    margin: 30px 30px 60px;
     padding: 20px;
-    background-color: #fff; 
+    background-color: #302A46; 
 }
 
 .localNavigation{
-  background-color: #333333;
+  background-color: #F8EDBF; 
   width: 40%;
   padding: 30px 70px 30px 30px;
+  margin: 50px 20px 60px;
 }
 
 #search{
@@ -113,7 +113,7 @@ main{
 .shop_link{
   max-height: 320px;
   overflow: scroll;
-  border: solid 1px white;
+  border: solid 3px white;
   margin: 30px 30px 0 30px;
   padding: 0 15px;
   text-align: left;
@@ -134,8 +134,8 @@ main{
 .footer{
     width: 100%;
     text-align: center;
-    background-color: #333333;
-    color: #ffff;
+    background-color: #fff;
+    color: #292745;
     padding: 30px 0;
     position: absolute;
 }
