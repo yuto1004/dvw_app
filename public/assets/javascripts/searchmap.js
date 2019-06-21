@@ -76,6 +76,8 @@ var markerData = [ // マーカー情報
 ];
 
 
+
+
 function initMap () {
   var directionsDisplay;
       var directionsService = new google.maps.DirectionsService();
@@ -159,12 +161,7 @@ var element = document.getElementById( "target" ) ;
 var radioNodeList = element.place ;
 // 選択状態の値(value)を取得
 var address = radioNodeList.value ;
-if ( address === "" ) {
-	// 未選択状態
-} else {
-	// aには選択状態の値が代入されている
-	console.log( address ) ;
-}
+
       //map.setCenter( new google.maps.LatLng(35.6649569, 139.71193570000003));
       var geocoder = new google.maps.Geocoder();
 　    geocoder.geocode(
