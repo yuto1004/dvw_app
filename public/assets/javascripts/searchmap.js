@@ -1,5 +1,4 @@
 var map;
-
 var marker = [];
 var infoWindow = [];
 var markerData = [ // マーカー情報
@@ -76,6 +75,7 @@ var markerData = [ // マーカー情報
     },
 ];
 
+
 function initMap () {
   var directionsDisplay;
       var directionsService = new google.maps.DirectionsService();
@@ -83,7 +83,7 @@ function initMap () {
       directionsDisplay = new google.maps.DirectionsRenderer();
       var mapOptions = {
           zoom: 7,
-          center: new google.maps.LatLng(35.6644419, 139.76238680000006)
+          center: new google.maps.LatLng(35.6644419, 139.76238680000006),
       };
   
       // mapの表示
@@ -132,8 +132,8 @@ function markerEvent(i) {
 marker[i].addListener('mouseover', function() { // マーカーに重ねたとき
  infoWindow[i].open(map, marker[i]); // 吹き出しの表示
 });
-marker[i].addListener('mouseout', function() { // マーカーに重ねたとき
-    infoWindow[i].close(map, marker[i]); // 吹き出しの表示
+marker[i].addListener('mouseout', function() { // マーカーから離したとき
+    infoWindow[i].close(map, marker[i]); // 吹き出しの非表示
    });
 
 
@@ -150,11 +150,39 @@ $(window).on("load", function() {
   });
 
 
-  function test(){
-      map.setZoom(15);
-      //var station = getElementByid('5').value;
-      //new google.maps.LatLng(35.6649569, 139.71193570000003);
-      map.setCenter( new google.maps.LatLng(35.6649569, 139.71193570000003));
+  function station(){
+      //map.setZoom(15);
+      //var address = document.getElementById("place").value;
+    // form要素を取得
+var element = document.getElementById( "target" ) ;
+// form要素内のラジオボタングループ(name="hoge")を取得
+var radioNodeList = element.place ;
+// 選択状態の値(value)を取得
+var address = radioNodeList.value ;
+if ( address === "" ) {
+	// 未選択状態
+} else {
+	// aには選択状態の値が代入されている
+	console.log( address ) ;
+}
+      //map.setCenter( new google.maps.LatLng(35.6649569, 139.71193570000003));
+      var geocoder = new google.maps.Geocoder();
+　    geocoder.geocode(
+  {
+    'address': address,
+    'region': 'jp'
+  },
+  function(results, status){
+    if(status==google.maps.GeocoderStatus.OK){
+        map.setCenter(results[0].geometry.location);
+        map.setZoom(15);
+    }else {
+        //失敗したとき
+        alert('住所検索に失敗しました。');
+    }
+  }
+);
+
         }
 
 function test2(){
