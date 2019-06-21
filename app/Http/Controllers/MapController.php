@@ -19,9 +19,11 @@ class MapController extends Controller
         return view('search.top')->with('shops',$shops);
     }
     
-    public function search(){
+    public function search(Request $request){
         $shops = Shop::all();
         $genres = Shop::groupBy('genre')->get();
-        return view('search.search')->with(array('shops'=>$shops,'genres'=>$genres));
+        $keiro1 = $request->s[0];
+        $keiro2 = $request->s[1];
+        return view('search.search')->with(array('shops'=>$shops,'genres'=>$genres,'keiro1'=>$keiro1,'keiro2'=>$keiro2));
     }
 }
