@@ -14,7 +14,9 @@
             <form id="search" action="/map/search/">
               <input id="sbox" name="s" type="text" placeholder="出発駅" /><br>
               <input id="sbox" name="s" type="text" placeholder="到着駅" />
-              <p><input id="sbtn" type="submit" value="検索" /></p>
+              <p class="sbtn">
+                <input id="sbtn" type="submit" value="検索">
+              </p>
             </form>
             <div class="shop_link">
                @foreach($shops as $shop)
