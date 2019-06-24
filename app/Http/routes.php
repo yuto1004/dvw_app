@@ -8,7 +8,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/map/search/', 'MapController@search');
 
-    Route::resource('/shop', 'ShopController');
+    Route::resource('/shops', 'ShopController');
 
     Route::resource('/review', 'ReviewController');
 

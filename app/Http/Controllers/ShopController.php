@@ -14,7 +14,7 @@ class ShopController extends Controller
 {
     public function __construct()
     {
-      $this->middleware('auth', array('except' => 'index'));
+      $this->middleware('auth')->except('index', 'show');
     }
 
     public function create()
@@ -36,6 +36,12 @@ class ShopController extends Controller
       );
   
       return view('shops.shop_store');
+    }
+
+    public function show()
+    {
+      $shops = Shop::all();
+      return view('shops.shop_show')->with('shops', $shops);
     }
     
 }
