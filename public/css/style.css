@@ -16,7 +16,6 @@ body{
     padding: 30px 15px 0;
     font-size: 30px;
     text-align: left;
-    background-color: #F8EDBF;
 }
 .icon{
     float: left;
@@ -41,15 +40,15 @@ nav{
     min-width: 90px;
   }
   nav li:not(:last-child){
-    border-right:2px solid #292745;
+    border-right:2px solid #fff;
   }
   nav a{
     text-decoration: none;
-    color: #292745;
+    color: #fff;
   }
 
   nav a:hover{
-    border-bottom:2px solid #D2E199;
+    border-bottom:2px solid #f6c71e;
   }
 
 main{
@@ -60,27 +59,29 @@ main{
 .content{
     flex: 1;
     text-align: center;
-    margin: 30px 30px 60px;
-    padding: 20px;
+    margin: 50px 30px 60px;
     background-color: #302A46; 
 }
 
 .localNavigation{
-  background-color: #F8EDBF; 
+  background-color:rgba(72,72,72,0.4);
   width: 40%;
-  padding: 30px 70px 30px 30px;
-  margin: 50px 20px 60px;
+  padding: 50px;
+  margin: 50px 30px 60px;
 }
 
 #search{
-    margin: 0 30px 30px;
+  margin: 10px 0 50px;
+  text-align: center;
 }
 
 #sbox{
   outline:0;
     font-size: 15px;
     padding: 2px 4px;
-    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
     height: 30px;
     width: 300px;
     border-radius: 5px;
@@ -94,19 +95,18 @@ main{
 
 #sbtn{
   display: block;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 0.5em 5em;
   text-decoration: none;
-  color: #67c5ff;
-  border: solid 2px #67c5ff;
+  color: #de650e;
+  border: solid 2px #de650e;
   border-radius: 3px;
   transition: .4s;
 }
 
 #sbtn:hover {
-  background: #67c5ff;
+  background: #de650e;
   color: white;
 }
 
@@ -121,10 +121,10 @@ main{
 }
 
 .shop_link a:link {
-   color: rgb(180, 180, 180);
+   color: #8FBDD9;
 }
 .shop_link a:visited {
-  color: #889786;
+  color: #718ba5;
 }
 
 .shop_link a:hover {
@@ -134,8 +134,7 @@ main{
 .footer{
     width: 100%;
     text-align: center;
-    background-color: #fff;
-    color: #292745;
+    color: #fff;
     padding: 30px 0;
     position: absolute;
 }
@@ -146,7 +145,8 @@ main{
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-html{    background:url(http://thekitemap.com/images/feedback-img.jpg) fixed;
+html{
+  background:url("https://cdn.pixabay.com/photo/2015/01/06/03/37/night-view-589829_960_720.jpg") fixed;
   background-size: cover;
   height:100%;
 }
@@ -316,7 +316,23 @@ html{    background:url(http://thekitemap.com/images/feedback-img.jpg) fixed;
 }
 
 
+#sbtn_shop_create{
+  display: block;
+  margin: 2px 120px 30px;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  color: #de650e;
+  border: solid 3px #de650e;
+  border-radius: 3px;
+  transition: .4s;
+}
 
+#sbtn_shop_create:hover {
+  background: #de650e;
+  color: white;
+}
 
 
 
@@ -362,7 +378,7 @@ input:focus, textarea:focus {
   width: 100%;
   border: #fbfbfb solid 4px;
   cursor:pointer;
-  background-color: #3498db;
+  background-color: #de650e;
   color:white;
   font-size:24px;
   padding-top:22px;
@@ -376,7 +392,7 @@ input:focus, textarea:focus {
 
 #button-blue:hover{
   background-color: rgba(0,0,0,0);
-  color: #0493bd;
+  color: #de650e;
 }
 
 .submit{
@@ -472,11 +488,11 @@ h2{
 }
 .card-link a {
   text-decoration: none;
-  color: #0bd;
+  color: #de650e;
   margin: 0 10px;
 }
 .card-link a:hover {
-  color: #0090aa;
+  color: #be3713;
 }
 
 /*評価の星*/
