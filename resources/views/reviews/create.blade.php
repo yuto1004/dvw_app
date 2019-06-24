@@ -16,10 +16,10 @@
                   <option value="others">Others（新規登録ボタンをクリックしてください）</option>
                 </select>
                 <!--ここに店名のプルダウンとお店新規登録画面への遷移ボタン-->
-                <a id="sbtn" href="/shop/create">お店を新規登録する</a>
+                <a id="sbtn_shop_create" href="/shop/create">お店を新規登録する</a>
               </div>
             </p>
-            <p class="rate">
+            <p class="rate_select">
               <select required class="feedback-input-post" name="rate">
                 <option value="" hidden>Rate Select</option>
                 <option value="1">1</option>
