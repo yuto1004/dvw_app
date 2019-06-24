@@ -75,6 +75,11 @@ var markerData = [ // マーカー情報
      },
 ];
 
+var shops =$('#hogejs').data('shops');
+//for (var i = 0; i < shops.length; i++) {
+    //console.log(shops[i]['link']);
+   //};
+
 function initMap () {
   var directionsDisplay;
       var directionsService = new google.maps.DirectionsService();
@@ -111,41 +116,63 @@ function initMap () {
       });
 
   //ここからマーカー処理
-  for (var i = 0; i < markerData.length; i++) {
-    var markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
-    marker[i] = new google.maps.Marker({ // マーカーの追加
-     position: markerLatLng, // マーカーを立てる位置を指定
+  for (var i = 0; i < shops.length; i++) {
+    var geocoder = new google.maps.Geocoder();
+    　    geocoder.geocode(
+      {
+        'address': shops[i]['address'],
+        'region': 'jp'
+      },
+      function(results, status){
+        if(status==google.maps.GeocoderStatus.OK){
+    marker[i] = new google.maps.Marker({
+        position: results[0].geometry.location, // マーカーを立てる位置を指定
         map: map, // マーカーを立てる地図を指定
         animation: google.maps.Animation.DROP,
         opacity:1
-   });
+    });
+        }}
+    )}
+
+    //var markerLatLng = new google.maps.LatLng({lat: shops[i]['latitude'], lng: shops[i]['longitude']}); // 緯度経度のデータ作成
+    //marker[i] = new google.maps.Marker({ // マーカーの追加
+     //position: markerLatLng, // マーカーを立てる位置を指定
+        //map: map, // マーカーを立てる地図を指定
+        //animation: google.maps.Animation.DROP,
+        //opacity:1
+   //});
+
+   var options ={ 
+   content: "SYNCER" ,
+} ;
+
    
    
-   infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-    content: '<div class="sample">' + 
-    '<img src = ' + markerData[i]['image'] + '>' +
-    '<a href =' + markerData[i]['url'] + '>' + '<br>' + 
-    markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
-  });
+   infoWindow[i] = new google.maps.InfoWindow(options) // 吹き出しの追加
+   
+    //'<div class="sample">' + 
+    //'<img src = ' + markerdata[i]['image'] + '>' +
+    //'<a href =' + shops['link'] + '>' + '<br>' + 
+    //shops['shop_name'] + '</div>' // 吹き出しに表示する内容
+  //});
 
 
-  markerEvent(i); // マーカーにクリックイベントを追加
-  }
+  //markerEvent(i); // マーカーにクリックイベントを追加
+
 
 // マーカーにクリックイベントを追加
-function markerEvent(i) {
+//function markerEvent(i) {
 
-marker[i].addListener('mouseover', function() { // マーカーに重ねたとき
- infoWindow[i].open(map, marker[i]); // 吹き出しの表示
-});
-marker[i].addListener('mouseout', function() { // マーカーから離したとき
-    infoWindow[i].close(map, marker[i]); // 吹き出しの非表示
-   });
+//marker[i].addListener('mouseover', function() { // マーカーに重ねたとき
+// infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+//});
+//marker[i].addListener('mouseout', function() { // マーカーから離したとき
+    //infoWindow[i].close(map, marker[i]); // 吹き出しの非表示
+   //});
 
-
+//}
 }
-}      
-  
+
 $(window).on("load", function() {
     $("li").on("click", function() {
         $("li.selected").removeClass("selected");
@@ -187,6 +214,8 @@ var address = radioNodeList.value ;
         }
 
 function test2(){
+
+
     marker[0].setAnimation(google.maps.Animation.BOUNCE);
     marker[1].setAnimation(google.maps.Animation.BOUNCE);
     marker[2].setAnimation(google.maps.Animation.BOUNCE);
