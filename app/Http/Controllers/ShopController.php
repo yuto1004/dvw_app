@@ -38,10 +38,16 @@ class ShopController extends Controller
       return view('shops.shop_store');
     }
 
-    public function show()
+    public function index()
     {
-      $shops = Shop::all();
-      return view('shops.shop_show')->with('shops', $shops);
+      $shops = Shop::orderBy('id', 'ASC')->take(20)->get();
+      return view('shops.shop_index')->with('shops', $shops);
     }
     
+    public function show($shop_id)
+    {
+      $shops = Shop::all();
+      $reviews = Shop::find($shop_id)->reviews()->orderBy('created_at', 'DESC')->paginate(5);
+      return view('shops.shop_show')->with(array('reviews'=>$reviews, 'shops'=>$shops));
+    }
 }

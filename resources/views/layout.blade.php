@@ -18,7 +18,7 @@
             <nav>
               <ul>
                 <li><a class="current" href="/">Home</a></li>
-                <li><a href="/shops/show">Shop List</a></li>
+                <li><a href="/shops/index">Shop List</a></li>
                 <li><a href="/users/{{ Auth::user()->id }}">My Page</a></li>
                 <li><a class=post href="/review/create">Post</a></li>
                 <li><a href="/logout">Sign out</a></li>
@@ -30,7 +30,7 @@
             <nav>
               <ul>
                 <li><a class="current" href="/">Home</a></li>
-                <li><a href="/shops/show">Shop List</a></li>
+                <li><a href="/shops/index">Shop List</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="/login">Sign in</a></li>
                 <li><a href="/register">Sign up</a></li>
