@@ -478,3 +478,41 @@ h2{
 .card-link a:hover {
   color: #0090aa;
 }
+
+/*評価の星*/
+.rate {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  font-size: 20px;
+}
+.rate:before, .rate:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  display: inline-block;
+  height: 20px;
+  line-height: 20px;
+}
+.rate:before {
+  color: #ddd; /*星色*/
+}
+.rate:after {
+  color: #ffa500;
+  overflow: hidden;
+  white-space: nowrap; /*重要*/
+}
+
+.rate00:after{width: 0;}
+.rate05:after{width: 10px;}
+.rate10:after{width: 20px;}
+.rate15:after{width: 30px;}
+.rate20:after{width: 40px;}
+.rate25:after{width: 50px;}
+.rate30:after{width: 60px;}
+.rate35:after{width: 70px;}
+.rate40:after{width: 80px;}
+.rate45:after{width: 90px;}
+.rate50:after{width: 100px;}
