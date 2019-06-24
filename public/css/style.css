@@ -532,3 +532,22 @@ h2{
 .rate40:after{width: 80px;}
 .rate45:after{width: 90px;}
 .rate50:after{width: 100px;}
+
+.disabled{
+  color: #fff;
+}
+
+.active{
+  color: #f6c71e;
+}
+
+.pagination li a{
+  color: #fff;
+}
+
+.pagination li{
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 10px;
+}
