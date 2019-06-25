@@ -3,7 +3,8 @@ var marker = [];
 var infoWindow = [];
 var shops =$('#hogejs').data('shops');
 var counter = 0;
-
+var marker2 = [];
+        
 function initMap () {
 
 //経路案内
@@ -38,6 +39,7 @@ function initMap () {
 
 
   //ここからマーカー処理
+  //function Geocode(shops){
   for (var i = 0; i < shops.length; i++) {
     var geocoder = new google.maps.Geocoder();
     　    geocoder.geocode(
@@ -51,10 +53,11 @@ function initMap () {
         var result = results[0].geometry.location;
         marker1 = new google.maps.Marker({
         position: result, // マーカーを立てる位置を指定
-        map: map, // マーカーを立てる地図を指定
+         // マーカーを立てる地図を指定
         animation: google.maps.Animation.DROP,
         opacity:1
     });
+    marker1.setMap(map);
     marker.push(marker1);
     fukidasi(marker1);
 
@@ -82,7 +85,6 @@ function fukidasi(marker){
 
 }
 }
-
 
 
 $(window).on("load", function() {
@@ -121,18 +123,99 @@ var address = radioNodeList.value ;
         }
 
 
-function test2(){
 
-    marker[0].setAnimation(google.maps.Animation.BOUNCE);
-    marker[1].setAnimation(google.maps.Animation.BOUNCE);
-    marker[2].setAnimation(google.maps.Animation.BOUNCE);
-    marker[3].setAnimation(google.maps.Animation.BOUNCE);
-    marker[4].setAnimation(google.maps.Animation.BOUNCE);
-    marker[5].setOpacity(0.2);
-    marker[6].setOpacity(0.2);
-    marker[7].setOpacity(0.2);
-    marker[8].setOpacity(0.2);
-    marker[9].setOpacity(0.2);
+
+
+function test2(){
+    var infoWindow2 = [];
+        var counter2 = 0;
+    var genre;
+    var genrepin = [];
+    var elements = document.getElementsByName('genre') ;
+    for(var i = 0 ; i < elements.length ; i ++){
+      if(elements[i].checked == true){
+        genre = elements[i].value;
+        for (var i = 0; i < shops.length; i++) {
+                if( genre===shops[i]['genre']){
+                genrepin.push(shops[i]);
+                }   
+            }
+        }
+
+        //マーカー削除
+        function deleteMakers(idx=null) {
+            if(idx == null){
+                for (var i = 0; i < marker.length; i++) {
+                        marker[i].setMap(null);
+                }
+                  marker = [];	//参照を開放
+            }else{
+                //生成済マーカーからID指定されたマーカーを削除
+                for (var i = 0; i < marker.length; i++) {
+                    if(idx.indexOf(i) >= 0){
+                        marker[i].setMap(null);
+                    }
+                }
+            }
+        }
+        function deleteMakers2(idx=null) {
+            if(idx == null){
+                //生成済マーカーを順次すべて削除する
+                for (var i = 0; i < marker2.length; i++) {
+                        marker2[i].setMap(null);
+                }
+                  marker2 = [];	//参照を開放
+            }else{
+                //生成済マーカーからID指定されたマーカーを削除
+                for (var i = 0; i < marker2.length; i++) {
+                    if(idx.indexOf(i) >= 0){
+                        marker2[i].setMap(null);
+                    }
+                }
+            }
+        }
+       deleteMakers();
+       deleteMakers2();
+       
+       //ここからマーカー処理
+       for (var i = 0; i < genrepin.length; i++) {
+       var geocoder = new google.maps.Geocoder();
+       　    geocoder.geocode(
+       {
+          'address': genrepin[i]['address'],
+          'region': 'jp',
+        },
+        function (results, status){
+            
+          if(status===google.maps.GeocoderStatus.OK){
+          var result = results[0].geometry.location;
+          marker1 = new google.maps.Marker({
+          position: result, // マーカーを立てる位置を指定
+           // マーカーを立てる地図を指定
+          animation: google.maps.Animation.DROP,
+          opacity:1
+       });
+       marker1.setMap(map);
+       marker2.push(marker1);
+       fukidasi(marker1);
+       }})}
+       //ふきだし作成。
+       function fukidasi(marker){
+          var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
+              content: '<div class="sample"><p>' + genrepin[counter2]["shop_name"]
+              //'<img src = ' + markerdata[i]['image'] + '>' +
+              + '</p><a href ="' + genrepin[counter2]["link"] + '" target="_blank">link</a><br>'
+              + '</div>'
+            });
+          infoWindow2.push(infoWindow1);
+          counter2++;
+       google.maps.event.addListener(marker,'mouseover', function(event) { // マーカーに重ねたとき
+          for(var j=0;j<infoWindow2.length;j++){
+              infoWindow2[j].close();
+          }
+          infoWindow1.open(marker1.getMap(), marker); // 吹き出しの表示
+          });
+       }
+                   }
     
-      //if(markerData[i]['genre'] == "livehouse"){}
-  }
+    }

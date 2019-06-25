@@ -38,11 +38,11 @@
 
             </div>
             <div class="right">
-              <form method="post" id="genre">
+              <form method="post" id="genre" name="form2">
                 @foreach($genres as $genre)
                   <p>
                     @if($genre->genre != NULL)
-                    <input type="checkbox" name="genre" value="{{$genre->genre}}">{{$genre->genre}}
+                    <input type="radio" name="genre" value="{{$genre->genre}}">{{$genre->genre}}
                     @endif
                   </p>
                 @endforeach
