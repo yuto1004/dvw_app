@@ -551,3 +551,37 @@ h2{
   padding: 0;
   margin: 10px;
 }
+
+/* ここからショップリスト */
+.shop_rate{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;        /*中央揃え*/
+  justify-content: space-between; /*均等に間隔をあける*/
+  justify-content: space-around;  /*均等に間隔をあける・両端にも間隔をあける*/
+  align-content: stretch;
+}
+
+#form_shoplist{
+  width: 100%;
+  float: left;
+  padding-top: 0px;
+}
+
+.flexbox_shoplist{
+  background-color: rgba(72,72,72,0.4);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  min-width: 300px;
+  justify-content: center;
+  left: 50;
+  margin: 30px;
+  margin-bottom: 30px;
+  -webkit-border-radius: 7px;
+}
+
+#shop_avatar{
+  width: 300px;
+}
