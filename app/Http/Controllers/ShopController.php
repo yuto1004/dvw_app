@@ -40,7 +40,7 @@ class ShopController extends Controller
 
     public function index()
     {
-      $shops = Shop::orderBy('id', 'ASC')->take(20)->get();
+      $shops = Shop::orderBy('id', 'ASC')->paginate(9);
       return view('shops.shop_index')->with('shops', $shops);
     }
     

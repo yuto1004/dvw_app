@@ -16,6 +16,7 @@
       </div>
     </div>
     @endforeach
+    {{$shops->render()}}
   </div>
-<main>
+</main>
 @endsection
