@@ -47,7 +47,8 @@
                   </p>
                 @endforeach
                 <p>
-                  <input id="sbtn" type="button" value="検索" onclick="test2();">
+                  <input id="sbtn" type="button" value="検索" onclick="genresearch();"><br>
+                  <input id="sbtn" type="button" value="ランダムに探す" onclick="randomsearch();">
                 </p>
               </form>
             </div>
