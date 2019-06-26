@@ -19,7 +19,7 @@
                   @break
                 @endif        
               @endforeach
-              <span class="rate rate{{ $review->rate*20 }}"></span>
+              <span class="rate rate{{ $review->rate }}0"></span>
               <div class="review_scroll">
                 <p class="card-text">{{$review->review}}</p>
               </div>
