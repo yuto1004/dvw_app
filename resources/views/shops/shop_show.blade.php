@@ -18,7 +18,9 @@
                         @endif
                         <h2>{{ $review->name }}さんの投稿</h2>
                         <span class="rate rate{{ $review->rate }}0"></span>
-                        <p class="card-text">{{$review->review}}</p>
+                        <div class="review_scroll">
+                            <p class="card-text">{{$review->review}}</p>
+                        </div>
                     </div>
                 @endforeach
             </ul>
