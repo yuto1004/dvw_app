@@ -7,7 +7,7 @@
       <div id=form-shoplist>
         <div class=flexbox_shoplist>
           @if( $shop->avatar == NULL)
-            <img id=shop_avatar src="/assets/images/no_image.png">
+            <img id=shop_avatar src="/assets/images/icon/no_image.png">
           @else
             <img id=shop_avatar src="{{$shop->avatar}}">
           @endif

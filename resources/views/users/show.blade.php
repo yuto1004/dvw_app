@@ -9,9 +9,9 @@
           <div id=form-shoplist>
             <section class="flexbox_shoplist">
               @if ( $review->images == NULL)
-                <img id=shop_avatar src="/assets/images/no_image.png">
+                <img id=shop_avatar src="/assets/images/icon/no_image.png">
               @else
-                <img id="shop_avatar" src="{{ $review->images }}" alt="">
+                <img id="shop_avatar" src="/assets/images/review/{{ $review->images }}" alt="">
               @endif
               @foreach($shops as $shop)
                 @if($review->shop_id == $shop->id)

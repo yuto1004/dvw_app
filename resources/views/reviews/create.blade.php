@@ -2,7 +2,7 @@
 
 @section('content')
   <main>
-    {{ Form::open(['url' => '/review', 'method' => 'post']) }}
+    {{ Form::open(['url' => '/review', 'method' => 'post', 'files' => true]) }}
       <div id="form-main">
         <div id="form-div">
           <div class="form" id="form1" action="">

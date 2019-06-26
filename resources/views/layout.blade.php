@@ -11,7 +11,7 @@
     <div class="wrapper">
       <header class="header">
         <div class = "icon">
-        <img id=icon src="{{ asset('assets/images/new_logo.JPG') }}">
+        <img id=icon src="{{ asset('assets/images/icon/new_logo.JPG') }}">
         </div>
         @if (Auth::check())
           <div class = "bottons">
