@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Review;
 use App\Shop;
 use Auth;
+use Image;
 
 class ReviewController extends Controller
 {
@@ -31,12 +32,16 @@ class ReviewController extends Controller
 
   public function store(Request $request)
   {
+    $fileName = $request->images->getClientOriginalName();
+    Image::make($request->images)->save(public_path() . '/assets/images/review/' . $fileName);
+
     Review::create(
       array(
         'rate' => $request->rate,
         'review' => $request->text,
         'user_id' => Auth::user()->id,
-        'shop_id' => $request->shop_id
+        'shop_id' => $request->shop_id,
+        'images' => $fileName,
       )
     );
 
