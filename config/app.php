@@ -149,6 +149,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         // 以下1行を追加
         Collective\Html\HtmlServiceProvider::class,  // 追加
+        // 以下を追加
+        Intervention\Image\ImageServiceProvider::class,    // 追加
 
         /*
          * Application Service Providers...
@@ -206,6 +208,9 @@ return [
         // 以下2行を追加
         'Form' => Collective\Html\FormFacade::class,  // 追加
         'Html' => Collective\Html\HtmlFacade::class,  // 追加
+        'Input'     => Illuminate\Support\Facades\Input::class,
+        // 以下を追加
+        'Image'     => Intervention\Image\Facades\Image::class,    // 追加
 
     ],
 
