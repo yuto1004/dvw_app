@@ -32,7 +32,7 @@
                   <p><input type="radio" name="place" id="place" value="代々木八幡駅">代々木八幡</p>
                 
                 <p>
-                  <input id="sbtn"  type="button" value="検索" onclick="station();">
+                  <input id="sbtn"  type="button" value="絞り込む" onclick="station();">
                 </p>
               </form>
 
@@ -47,8 +47,8 @@
                   </p>
                 @endforeach
                 <p>
-                  <input id="sbtn" type="button" value="検索" onclick="genresearch();"><br>
-                  <input id="sbtn" type="button" value="ランダムに探す" onclick="randomsearch();">
+                  <input id="sbtn" type="button" value="絞り込む" onclick="genresearch();"><br>
+                  <input id="sbtn" type="button" value="ランダム" onclick="randomsearch();">
                 </p>
               </form>
             </div>

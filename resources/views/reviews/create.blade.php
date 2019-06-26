@@ -5,6 +5,7 @@
     {{ Form::open(['url' => '/review', 'method' => 'post', 'files' => true]) }}
       <div id="form-main">
         <div id="form-div">
+          <h2>レビューを投稿する</h2>
           <div class="form" id="form1" action="">
             <p class="shop_name">
               <div class="cp_ipselect cp_sl01">
