@@ -1,13 +1,14 @@
 var map;
 var marker = [];
 var infoWindow = [];
+var counter = 0;
 var markerData = [ // マーカーを立てる場所名・緯度・経度
   {
         name: '現在地',
         lat: 35.6644419,
         lng: 139.76238680000006,
         url: "http://localhost:8000/",
-        image: "assets/images/アイコン.png",
+        image: "assets/images/new_logo_icon.jpg",
         icon: "assets/images/icon.png"
  }, {
         name: 'カレッタ汐留',
@@ -47,35 +48,43 @@ function initMap() {
  // マーカー毎の処理
  for (var i = 0; i < markerData.length; i++) {
         markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
-        marker[i] = new google.maps.Marker({ // マーカーの追加
+        marker1 = new google.maps.Marker({ // マーカーの追加
          position: markerLatLng, // マーカーを立てる位置を指定
             map: map // マーカーを立てる地図を指定
        });
- 
-     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-         content: '<div class="sample">' + 
-         '<img src = ' + markerData[i]['image'] + '>' +
-         '<a href =' + markerData[i]['url'] + '>' + '<br>' + 
-         markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
-       });
+       marker.push(marker1);
+       fukidasitop(marker1);
+      }
 
- 
-     markerEvent(i); // マーカーにクリックイベントを追加
- }
- marker[0].setOptions({// TAM 東京のマーカーのオプション設定
+      function fukidasitop(marker){
+     var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
+         content: '<div class="sample">' + 
+         '<img src = ' + markerData[counter]['image'] + '>' +
+         '<a href =' + markerData[counter]['url'] + '>' + '<br>' + 
+         markerData[counter]['name'] + '</div>' // 吹き出しに表示する内容
+       });
+       infoWindow.push(infoWindow1);
+       counter++;
+       google.maps.event.addListener(marker,'mouseover', function(event) { // マーカーをクリックしたとき
+        for(var j=0;j<infoWindow.length;j++){
+        infoWindow[j].close();
+        }
+        infoWindow1.open(marker.getMap(), marker);  // 吹き出しの表示
+  });
+  infoWindow.push(infoWindow1);
+  
+}  
+  marker[0].setOptions({// TAM 東京のマーカーのオプション設定
        icon: {
         url: markerData[0]['icon']// マーカーの画像を変更
       }
-  });
-   
-}
+      }); 
+ }
  
-// マーカーにクリックイベントを追加
-function markerEvent(i) {
-    marker[i].addListener('click', function() { // マーカーをクリックしたとき
-      infoWindow[i].open(map, marker[i]); // 吹き出しの表示
-  });
-}
+  
+
+ 
+    
 
 $(window).on("load", function() {
   $("li").on("click", function() {
