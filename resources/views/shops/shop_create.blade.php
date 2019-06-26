@@ -5,6 +5,7 @@
     {{ Form::open(['url' => '/shop', 'method' => 'post']) }}
       <div id="form-main">
         <div id="form-div">
+          <h2>新たにお店を登録する</h2>
           <div class="form" id="form1">
             <p class="shop_name">
               <input name="shop_name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input-post" id="shop_name" placeholder="Shop's name" />
