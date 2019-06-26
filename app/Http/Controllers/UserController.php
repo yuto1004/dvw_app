@@ -16,7 +16,7 @@ class UserController extends Controller
     {
 
       $name = User::find($id)->name;
-      $reviews = User::find($id)->reviews()->orderBy('created_at', 'DESC')->paginate(9);
+      $reviews = User::find($id)->reviews()->orderBy('created_at', 'DESC')->paginate(5);
       $shops = Review::join('shops','reviews.shop_id','=','shops.id')->get();
 
       return view('users.show')->with(['name' => $name, 'reviews' => $reviews,'shops'=> $shops]);

@@ -24,7 +24,7 @@
           </section>
         </div>
       @endforeach
-      {{$reviews->render()}}
     </div>
   </main>
+  {{$reviews->render()}}
 @endsection
