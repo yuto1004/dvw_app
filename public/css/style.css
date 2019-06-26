@@ -218,15 +218,15 @@ html{
 .feedback-input:focus{
   background: #fff;
   box-shadow: 0;
-  border: 3px solid #3498db;
-  color: #3498db;
+  border: 3px solid #de650e;
+  color: #3c3c3c;
   outline: none;
   padding: 13px 13px 13px 54px;
 }
 
 .focused{
-  color:#30aed6;
-  border:#30aed6 solid 3px;
+  color:#de650e;
+  border:#de650e solid 3px;
 }
 
 /* Icons ---------------------------------- */
@@ -313,8 +313,8 @@ input[type="email"]:focus {
 .feedback-input-post:focus{
   background: #fff;
   box-shadow: 0;
-  border: 3px solid #3498db;
-  color: #3498db;
+  border: 3px solid #de650e;
+  color: #3c3c3c;
   outline: none;
   padding: 13px;
 }
@@ -322,6 +322,7 @@ input[type="email"]:focus {
 .feedback-input-post:hover{
   outline-color: #de650e;
 }
+
 
 #shop_name{
   background-size: 30px 30px;
@@ -640,11 +641,13 @@ h3 a:hover{
 }
 
 .review_scroll{
-  max-height: 280px;
+  box-sizing: border-box;
+  width: 320px;
+  height: 125px;
   overflow: scroll;
-  border: solid 3px white;
-  margin: 30px 30px 0 30px;
-  padding: 0 15px;
+  border: solid 2px white;
+  padding: 10px;
+  margin: 10px 0;
   text-align: left;
   color: rgb(48, 117, 207);
 }
