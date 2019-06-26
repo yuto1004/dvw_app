@@ -11,8 +11,10 @@
           @else
             <img id=shop_avatar src="{{$shop->avatar}}">
           @endif
-          <h3><a href="/shops/show/{{ $shop->id }}">{{ $shop->shop_name }}</a></h3>
-          <span class="rate rate{{ round($shop->reviews()->avg('rate')) }}0"></span>
+          <h2><a>{{ $shop->shop_name }}</a></h2>
+          <h2><span class="rate rate{{ round($shop->reviews()->avg('rate')) }}0"></span></h2>
+          <h3><a href="/shops/show/{{ $shop->id }}">Review</a></h3>
+          <h3><a href="{{ $shop->link }}">Web site</a></h3>
         </div>
       </div>
       @endforeach

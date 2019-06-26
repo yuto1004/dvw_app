@@ -3,9 +3,9 @@
 @section('content')
     <main>
         <div id="form-main">
-            <h2>
-            {{ $shop->shop_name }}へのみんなのレビュー
-            </h2>
+            <h3 class="head_explain">
+            <a href="{{ $shop->link }}">{{ $shop->shop_name }}</a>へのみんなのレビュー
+            </h3>
             <h2>
             <span class="rate rate{{ round($shop->reviews()->avg('rate')) }}0"></span>
             </h2>
