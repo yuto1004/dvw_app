@@ -113,6 +113,7 @@ main{
   border: solid 2px #de650e;
   border-radius: 3px;
   transition: .4s;
+  outline: none;
 }
 
 #sbtn:hover {
@@ -272,6 +273,17 @@ html{
   background-repeat: no-repeat;
 }
 
+input[type="text"]:focus {
+  border: 3px solid #de650e;
+}
+
+input[type="password"]:focus {
+  border: 3px solid #de650e;
+}
+
+input[type="email"]:focus {
+  border: 3px solid #de650e;
+}
 
 .field{
     margin: 10px;
@@ -305,6 +317,10 @@ html{
   color: #3498db;
   outline: none;
   padding: 13px;
+}
+
+.feedback-input-post:hover{
+  outline-color: #de650e;
 }
 
 #shop_name{
@@ -398,11 +414,13 @@ input:focus, textarea:focus {
   transition: all 0.3s;
   margin-top:-4px;
   font-weight:700;
+  outline-color: #de650e;
 }
 
 #button-blue:hover{
   background-color: rgba(0,0,0,0);
   color: #de650e;
+
 }
 
 .submit{
@@ -410,7 +428,7 @@ input:focus, textarea:focus {
 }
   
 .submit:hover {
-  color: #3498db;
+  color: #de650e;
 }
   
 .ease {
@@ -607,6 +625,9 @@ h3 a{
   text-decoration: none;
   color: #fff;
 }
+h3 a:hover{
+  border-bottom: 2px solid #f6c71e;
+}
 
 /*トップページの説明用*/
 
@@ -616,4 +637,14 @@ h3 a{
 
 .allShop{
   color: #fff;
+}
+
+.review_scroll{
+  max-height: 280px;
+  overflow: scroll;
+  border: solid 3px white;
+  margin: 30px 30px 0 30px;
+  padding: 0 15px;
+  text-align: left;
+  color: rgb(48, 117, 207);
 }
