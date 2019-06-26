@@ -33,6 +33,10 @@
               <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment"></textarea>
             </p>
 
+            <p class="field">
+            {{ Form::file('images') }}
+            </p>
+
             <div class="submit">
               <input type="submit" value="Post" id="button-blue"/>
               <div class="ease"></div>
