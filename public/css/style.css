@@ -562,6 +562,11 @@ h2{
   margin: 10px;
 }
 
+.pagination{
+  text-align: center;
+  padding: 0;
+}
+
 /* ここからショップリスト */
 .shop_rate{
   display:flex;
