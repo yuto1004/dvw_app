@@ -45,7 +45,7 @@ function shuffle(array) {
     return array;
   }
   shoprand = shuffle(shops);
-  console.log(shoprand);
+
 
 
 //ここからマーカー処理
@@ -74,11 +74,17 @@ function shuffle(array) {
 
     //ふきだし作成。
     function fukidasi(marker){ 
+        if(shoprand[counter]["avatar"]==0){
+            var shopimage = "http://localhost:8000/assets/images/icon/no_image.png";
+        } else {
+            var shopimage = shoprand[counter]["avatar"];
+        }
             var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
-                content: '<div class="sample"><p>' + shoprand[counter]["shop_name"]
-                //'<img src = ' + markerdata[i]['image'] + '>' +
-                + '</p><a href ="' + shoprand[counter]["link"] + '" target="_blank">link</a><br>'
-                + '</div>'
+                content: '<div class="sample"><p>' 
+                + '<img src = ' + shopimage + ' width="300" height="200">'
+                + '</p><a href ="' + shoprand[counter]["link"] + '"target="_blank">'
+                + shoprand[counter]["shop_name"] + '</a><br>'
+                + '</div>',
               });
             infoWindow.push(infoWindow1);
             counter++;
@@ -201,10 +207,18 @@ function shuffle(array) {
            fukidasi(marker1);
            }})}
            function fukidasi(marker){
+            if(genrepin[counter2]["avatar"]==0){
+                var shopimage = "http://localhost:8000/assets/images/icon/no_image.png";
+    
+            } else {
+                var shopimage = genrepin[counter2]["avatar"];
+    
+            }
               var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
-                  content: '<div class="sample"><p>' + genrepin[counter2]["shop_name"]
-                  //'<img src = ' + markerdata[i]['image'] + '>' +
-                  + '</p><a href ="' + genrepin[counter2]["link"] + '" target="_blank">link</a><br>'
+                  content: '<div class="sample"><p>' 
+                  + '<img src = ' + shopimage + ' width="300" height="200">'
+                  + '</p><a href ="' + genrepin[counter2]["link"] + '" target="_blank">'
+                  + genrepin[counter2]["shop_name"] + '</a><br>'
                   + '</div>'
                 });
               infoWindow2.push(infoWindow1);
