@@ -40,14 +40,14 @@ class ShopController extends Controller
 
     public function index()
     {
-      $shops = Shop::orderBy('id', 'ASC')->paginate(12);
+      $shops = Shop::orderBy('id', 'ASC')->paginate(8);
       return view('shops.shop_index')->with('shops', $shops);
     }
     
     public function show($shop_id)
     {
       $shop = Shop::find($shop_id);
-      $reviews = Review::join('users','reviews.user_id','=','users.id')->where("shop_id",$shop_id)->orderBy('reviews.created_at', 'DESC')->paginate(12);
+      $reviews = Review::join('users','reviews.user_id','=','users.id')->where("shop_id",$shop_id)->orderBy('reviews.created_at', 'DESC')->paginate(8);
       return view('shops.shop_show')->with(['reviews'=>$reviews, 'shop'=>$shop]);
     }
 }
