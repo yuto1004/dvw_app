@@ -47,7 +47,7 @@ class ShopController extends Controller
     public function show($shop_id)
     {
       $shop = Shop::find($shop_id);
-      $reviews = Review::where("shop_id",$shop_id)->get();
+      $reviews = Review::join('users','reviews.user_id','=','users.id')->where("shop_id",$shop_id)->orderBy('reviews.created_at', 'DESC')->paginate(12);
       return view('shops.shop_show')->with(['reviews'=>$reviews, 'shop'=>$shop]);
     }
 }
