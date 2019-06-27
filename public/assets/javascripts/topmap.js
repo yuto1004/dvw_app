@@ -5,85 +5,93 @@ var counter = 0;
 var markerData = [ // マーカーを立てる場所名・緯度・経度
   {
         name: '現在地',
-        lat: 35.6644419,
-        lng: 139.76238680000006,
+        address:'東京都港区東新橋1-8-1',
         url: "http://localhost:8000/",
-        image: "assets/images/new_logo_icon.jpg",
-        icon: "assets/images/icon.png"
+        image: "assets/images/icon/new_logo.JPG",
+        icon: "assets/images/icon/icon.png"
  }, {
-        name: 'カレッタ汐留',
-        lat: 35.664656,
-        lng: 139.763185,
-        url: "http://www.caretta.jp/",
-        image: "assets/images/caretta.jpg"
+        name: 'BLUE MOOD',
+        address:'東京都中央区築地５丁目６−１０',
+        url: "https://blue-mood.jp/",
+        image: "https://blue-mood.jp/wp-content/uploads/2014/06/floorguide_key1.jpg"
  }, {
-        name: '浜離恩寵公園',
-        lat: 35.660218,
-        lng: 139.763726,
-        url: "https://www.tokyo-park.or.jp/park/format/index028.html",
-        image: "assets/images/koen.jpg"
+        name: 'Bubby’s Shiodome',
+        address:'東京都港区東新橋1-5-2',
+        url: "https://bubbys.jp/locations/shiodome/",
+        image: "https://www.shiodome-cc.com/image/shiodomecc/store/storage/w420xh315/b2f_buddys_d_shop.jpg"
  }, {
-        name: '一蘭　新橋店',
-        lat: 35.667301,
-        lng: 139.756889,
-        url: "https://ichiran.com/shop/tokyo/shinbashi/",
-        image: "assets/images/itiran.jpg"
+        name: 'FIRE HOUSE DELIVERY SERVICE 新橋店',
+        address:'東京都港区東新橋２丁目１０−７',
+        url: "http://www.firehouse.co.jp/",
+        image: "http://resize.blogsys.jp/8c61ab91a20e7c24fde2a5ddc26aa231042c32e0/trim2/0x384_22p_1200x604/http://livedoor.blogimg.jp/log_taka-test4/imgs/f/c/fc09c3f0.jpg"
  }, {
-        name: 'タミヤ プラモデルファクトリー 新橋店',
-        lat: 35.664563,
-        lng: 139.75529,
-        url: "https://www.tamiya-plamodelfactory.co.jp/",
-        image: "assets/images/tamiya.jpg"
- },
+        name: 'ザ・ローズ&クラウン 汐留日テレプラザ店',
+        address:'東京都港区東新橋1-6-1',
+        url: "https://www.dynac-japan.com/shop/roseandcrown/shiodome/",
+        image: "https://www.dynac-japan.com/roseandcrown/wp-content/uploads/sites/33/2017/08/2281_1_RC_shiodome_tennai_1_650.jpg"
+ }, {
+       name: '金春湯',
+       address:'東京都中央区銀座8-7-5',
+       url: "http://www002.upp.so-net.ne.jp/konparu/",
+       image: "https://komparu-ginza.com/wp/wp-content/uploads/2014/11/048.jpg"
+},
 ];
- 
-function initMap() {
- // 地図の作成
-    var mapLatLng = new google.maps.LatLng({lat: markerData[0]['lat'], lng: markerData[0]['lng']}); // 緯度経度のデータ作成
-   map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
-     center: mapLatLng, // 地図の中心を指定
-      zoom: 15 // 地図のズームを指定
-   });
- 
- // マーカー毎の処理
- for (var i = 0; i < markerData.length; i++) {
-        markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
-        marker1 = new google.maps.Marker({ // マーカーの追加
-         position: markerLatLng, // マーカーを立てる位置を指定
-            map: map // マーカーを立てる地図を指定
+function initMap(){
+var mapOptions = {
+       zoom: 15,
+       center: new google.maps.LatLng(35.6644419, 139.76238680000006),
+   };
+map = new google.maps.Map(document.getElementById("map"), mapOptions);
+for (var i = 0; i < markerData.length; i++) {
+       var geocoder = new google.maps.Geocoder();
+       　    geocoder.geocode(
+       {
+           'address': markerData[i]['address'],
+           'region': 'jp',
+         },
+         function (results, status){
+             
+           if(status===google.maps.GeocoderStatus.OK){
+           var result = results[0].geometry.location;
+           marker1 = new google.maps.Marker({
+           position: result,
+           icon:markerData[counter]['icon']
        });
+       marker1.setMap(map);
        marker.push(marker1);
-       fukidasitop(marker1);
-      }
+       fukidasi(marker1);
+   }
+         })
+       }
 
-      function fukidasitop(marker){
-     var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
-         content: '<div class="sample">' + 
-         '<img src = ' + markerData[counter]['image'] + '>' +
-         '<a href =' + markerData[counter]['url'] + '>' + '<br>' + 
-         markerData[counter]['name'] + '</div>' // 吹き出しに表示する内容
-       });
-       infoWindow.push(infoWindow1);
-       counter++;
-       google.maps.event.addListener(marker,'mouseover', function(event) { // マーカーをクリックしたとき
-        for(var j=0;j<infoWindow.length;j++){
-        infoWindow[j].close();
-        }
-        infoWindow1.open(marker.getMap(), marker);  // 吹き出しの表示
-  });
-  infoWindow.push(infoWindow1);
-  
-}  
-  marker[0].setOptions({// TAM 東京のマーカーのオプション設定
-       icon: {
-        url: markerData[0]['icon']// マーカーの画像を変更
-      }
-      }); 
- }
- 
-  
+   //ふきだし作成。
+   function fukidasi(marker){ 
+       if(markerData[counter]["image"]==0){
+           var shopimage = "http://localhost:8000/assets/images/icon/no_image.png";
+       } else {
+           var shopimage = markerData[counter]["image"];
+       }
+           var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
+               content: '<div class="sample"><p>' 
+               + '<img src = ' + shopimage + ' width="200" height="150">'
+               + '</p><a href ="'+markerData[counter]['url']+ '"target="_blank">'
+               + markerData[counter]["name"] + '</a><br>'
+               //+ '<p></p>'
+               //+ '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
+               //+ '<a href =http://localhost:8000/review/create>'+"Let's Review!"+'</a>'
+               + '</div>',
+             });
+           infoWindow.push(infoWindow1);
+           counter++;
+       google.maps.event.addListener(marker,'mouseover', function(event) { // マーカーに重ねたとき
+           for(var j=0;j<infoWindow.length;j++){
+               infoWindow[j].close();
+           }
+           infoWindow1.open(marker.getMap(), marker); // 吹き出しの表示
+           });
 
- 
+       } 
+}
     
 
 $(window).on("load", function() {
