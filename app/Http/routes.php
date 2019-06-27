@@ -8,6 +8,8 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/map/search/', 'MapController@search');
 
+    Route::get('/about','MapController@about');
+
     Route::get('shops/index', 'ShopController@index');
     Route::get('shops/show/{id}', 'ShopController@show');
 

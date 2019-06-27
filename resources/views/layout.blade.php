@@ -31,7 +31,7 @@
               <ul>
                 <li><a class="current" href="/">Home</a></li>
                 <li><a href="/shops/index">Shop List</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="/about">About Us</a></li>
                 <li><a href="/login">Sign in</a></li>
                 <li><a href="/register">Sign up</a></li>
               </ul>
