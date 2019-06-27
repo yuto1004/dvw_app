@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Review;
+use App\User;
 
 class ReviewsSeeder extends Seeder
 {
@@ -22,15 +22,14 @@ class ReviewsSeeder extends Seeder
 
         array_shift($ary);
         foreach($ary as $data) {
-          Review::create(
+          User::create(
             array(
-              'rate' => $data[1],
-              'review' => $data[2],
-              'user_id' => $data[3],
-              'shop_id' => $data[4],
+              'name' => $data[1],
+              'email' => $data[2],
+              'password' => $data[3],
+              'remember_token' => $data[4],
               'created_at' => $data[5],
               'updated_at' => $data[6],
-              'images' => $data[7]
             )
           );
         }
