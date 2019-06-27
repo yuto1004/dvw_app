@@ -27,10 +27,8 @@ class DatabaseSeeder extends Seeder
               'shop_name' => $data[1],
               'genre' => $data[2],
               'link' => $data[3],
-              'created_at' => $data[4],
-              'updated_at' => $data[5],
-              'address' => $data[6],
-              'avatar' => $data[7],
+              'address' => $data[4],
+              'avatar' => $data[5],
             )
           );
         }
