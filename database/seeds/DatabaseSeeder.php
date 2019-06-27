@@ -48,12 +48,12 @@ class DatabaseSeeder extends Seeder
         foreach($ary as $data) {
           Shop::create(
             array(
-              'id' => $data[0],
+
               'shop_name' => $data[1],
-              'genre' => $data[4],
-              'link' => $data[5],
-              'address' => $data[8],
-              'avatar' => $data[9],
+              'genre' => $data[2],
+              'link' => $data[3],
+              'address' => $data[4],
+              'avatar' => $data[5],
             )
           );
         }
