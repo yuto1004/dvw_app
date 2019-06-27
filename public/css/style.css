@@ -659,6 +659,7 @@ h3{
 
 .head_explain{
   text-align: center;
+  color: #fff;
 }
 
 /* ここからAbout usページ */
@@ -680,4 +681,9 @@ h3{
   margin-right: auto;
   border-radius: 7px;
   border-radius: 7px;
+}
+
+.about_text{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 30px;
 }
