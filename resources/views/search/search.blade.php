@@ -26,11 +26,11 @@
             <div class="left">
               <form method="get" id="target">
                 
-                  <p><input type="radio" name="place" id="place" value="汐留駅">汐留</p>
-                  <p><input type="radio" name="place" id="place" value="青山１丁目">青山一丁目</p>
-                  <p><input type="radio" name="place" id="place" value="表参道駅">表参道</p>
-                  <p><input type="radio" name="place" id="place" value="代々木上原駅">代々木上原</p>
-                  <p><input type="radio" name="place" id="place" value="代々木八幡駅">代々木八幡</p>
+                  <p class= "radio"><input type="radio" name="place" id="place" value="汐留駅"> 汐留</p>
+                  <p class= "radio"><input type="radio" name="place" id="place" value="青山１丁目"> 青山一丁目</p>
+                  <p class= "radio"><input type="radio" name="place" id="place" value="表参道駅"> 表参道</p>
+                  <p class= "radio"><input type="radio" name="place" id="place" value="代々木上原駅"> 代々木上原</p>
+                  <p class= "radio"><input type="radio" name="place" id="place" value="代々木八幡駅"> 代々木八幡</p>
                 
                 <p>
                   <input id="sbtn"  type="button" value="絞り込む" onclick="station();">
@@ -41,9 +41,9 @@
             <div class="right">
               <form method="post" id="genre" name="form2">
                 @foreach($genres as $genre)
-                  <p>
+                  <p class= "radio">
                     @if($genre->genre != NULL)
-                    <input type="radio" name="genre" value="{{$genre->genre}}">{{$genre->genre}}
+                    <input type="radio" name="genre" value="{{$genre->genre}}"> {{$genre->genre}}
                     @endif
                   </p>
                 @endforeach
