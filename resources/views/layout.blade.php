@@ -5,13 +5,13 @@
     <title>寄り道マップ</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="{{ asset('assets/javascripts/jquery-3.4.1.js') }}"></script>
+    <script src="{{ asset('assets/javascripts/jquery-3.4.1.js',config('app.asset-secure')) }}"></script>
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
         <div class = "icon">
-        <img id=icon src="{{ asset('assets/images/icon/new_logo.JPG') }}">
+        <img id=icon src="{{ asset('assets/images/icon/new_logo.JPG',config('app.asset-secure')) }}">
         </div>
         @if (Auth::check())
           <div class = "bottons">

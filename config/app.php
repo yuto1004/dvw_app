@@ -214,4 +214,6 @@ return [
 
     ],
 
+    'asset-secure' => env('ASSET_SECURE'),
+
 ];
