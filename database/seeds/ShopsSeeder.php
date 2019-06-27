@@ -28,8 +28,8 @@ class ShopsSeeder extends Seeder
               'shop_name' => $data[1],
               'genre' => $data[4],
               'link' => $data[5],
-              'address' => $data[8],
-              'avatar' => $data[9],
+              'address' => $data[6],
+              'avatar' => $data[7],
             )
           );
         }
