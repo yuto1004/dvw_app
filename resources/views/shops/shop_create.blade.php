@@ -2,7 +2,7 @@
 
 @section('content')
   <main>
-    {{ Form::open(['url' => '/shop', 'method' => 'post']) }}
+    {{ Form::open(['url' => '/shops', 'method' => 'post']) }}
       <div id="form-main">
         <div id="form-div">
           <h2>新たにお店を登録する</h2>
@@ -12,7 +12,7 @@
             </p>
             <p>
               <div class="cp_ipselect cp_sl01">
-                <select required class="feedback-input-post" onchange="create_other_genre()" name ="genre">
+                <select required class="feedback-input-post" name ="genre">
                   <option value="" hidden>Choose</option>
                   @foreach($genres as $genre)
                     <option value="{{$genre->genre}}">{{$genre->genre}}</option>
