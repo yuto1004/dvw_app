@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
         foreach($ary as $data) {
           Shop::create(
             array(
-              'id' => $data[0],
               'shop_name' => $data[1],
               'genre' => $data[2],
               'link' => $data[3],
