@@ -2,9 +2,9 @@ var map;
 var marker = [];
 var infoWindow = [];
 var shops =$('#hogejs').data('shops');
+var reviews =$('#hogejs').data('reviews');
 var counter = 0;
 var marker2 = [];
-    
 
 function initMap () {
 

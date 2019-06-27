@@ -8,7 +8,8 @@
         <!--ここでは入力された駅名から検索が反映されるようにする-->
 
         <script src="{{ asset('assets/javascripts/searchmap.js') }}"
-        id="hogejs" data-keiro1="{{$keiro1}}" data-keiro2="{{$keiro2}}" data-shops="{{$shops}}" data-bar="{$bar}"></script>
+        id="hogejs" data-keiro1="{{$keiro1}}" data-keiro2="{{$keiro2}}" data-shops="{{$shops}}" data-bar="{$bar}"
+        data-reviews="{{$reviews}}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh0c7Qd5PE6KkiO5TKpcyhNfR3nnwxdjQ&callback=initMap"
         async defer></script>
       </div>
