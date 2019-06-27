@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\Shop;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $file = new SplFileObject('database/seeds/users.csv');
+        $file = new SplFileObject('database/seeds/shops.csv');
         $file->setFlags(SplFileObject::READ_CSV);
 
         $ary = array();
@@ -21,18 +21,19 @@ class DatabaseSeeder extends Seeder
 
         array_shift($ary);
         foreach($ary as $data) {
-          User::create(
+          Shop::create(
             array(
-              'name' => $data[1],
-              'email' => $data[2],
-              'password' => $data[3],
-              'remember_token' => $data[4],
-              'created_at' => $data[5],
-              'updated_at' => $data[6],
+              'id' => $data[0],
+              'shop_name' => $data[1],
+              'genre' => $data[2],
+              'link' => $data[3],
+              'created_at' => $data[4],
+              'updated_at' => $data[5],
+              'address' => $data[6],
+              'avatar' => $data[7],
             )
           );
         }
-
        
         // $this->call(UsersTableSeeder::class);
     }
