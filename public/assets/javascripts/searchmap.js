@@ -79,11 +79,15 @@ function shuffle(array) {
         } else {
             var shopimage = shoprand[counter]["avatar"];
         }
+        var shopshow = "http://localhost:8000/shops/show/"+shoprand[counter]["id"];
             var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
                 content: '<div class="sample"><p>' 
-                + '<img src = ' + shopimage + ' width="300" height="200">'
-                + '</p><a href ="' + shoprand[counter]["link"] + '"target="_blank">'
+                + '<img src = ' + shopimage + ' width="200" height="150">'
+                + '</p><a href ="'+shoprand[counter]['link']+ '"target="_blank">'
                 + shoprand[counter]["shop_name"] + '</a><br>'
+                + '<p></p>'
+                + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
+                + '<a href =http://localhost:8000/review/create>'+"Let's Review!"+'</a>'
                 + '</div>',
               });
             infoWindow.push(infoWindow1);
@@ -214,10 +218,11 @@ function shuffle(array) {
                 var shopimage = genrepin[counter2]["avatar"];
     
             }
+            var shopshow = "http://localhost:8000/shops/show/"+genrepin[counter2]["id"];
               var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
                   content: '<div class="sample"><p>' 
                   + '<img src = ' + shopimage + ' width="300" height="200">'
-                  + '</p><a href ="' + genrepin[counter2]["link"] + '" target="_blank">'
+                  + '</p><a href ="' + shopshow + '" target="_blank">'
                   + genrepin[counter2]["shop_name"] + '</a><br>'
                   + '</div>'
                 });
