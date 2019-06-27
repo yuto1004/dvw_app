@@ -24,14 +24,13 @@ class ReviewsSeeder extends Seeder
         foreach($ary as $data) {
           Review::create(
             array(
-              'id' => $data[0],
               'rate' => $data[1],
               'review' => $data[2],
               'user_id' => $data[3],
               'shop_id' => $data[4],
               'created_at' => $data[5],
               'updated_at' => $data[6],
-              'images' => $data[7],
+              'images' => $data[7]
             )
           );
         }
