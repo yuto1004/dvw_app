@@ -89,6 +89,9 @@ for (var i = 0; i < markerData.length; i++) {
            }
            infoWindow1.open(marker.getMap(), marker); // 吹き出しの表示
            });
+       google.maps.event.addListener(marker,'click', function(event) { // マーカーに重ねたとき
+           infoWindow1.close(marker.getMap(), marker); // 吹き出しの表示
+           });
 
        } 
 }

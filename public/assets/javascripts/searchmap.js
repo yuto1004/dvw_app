@@ -63,7 +63,13 @@ function shuffle(array) {
             marker1 = new google.maps.Marker({
             position: result,
             animation: google.maps.Animation.DROP,
-            opacity:1
+            opacity:1,
+
+            label: {
+                text: shoprand[counter]['genre'].slice(0,1),                           //ラベル文字
+                color: 'black',                    //文字の色
+                fontSize: '20px'                     //文字のサイズ
+            }
         });
         marker1.setMap(map);
         marker.push(marker1);
@@ -84,7 +90,7 @@ function shuffle(array) {
                 content: '<div class="sample"><p>' 
                 + '<img src = ' + shopimage + ' width="200" height="150">'
                 + '</p><a href ="'+shoprand[counter]['link']+ '"target="_blank">'
-                + shoprand[counter]["shop_name"] + '</a><br>'
+                + shoprand[counter]["shop_name"] + '</a>('+shoprand[counter]['genre']+')<br>'
                 + '<p></p>'
                 + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
                 + '<a href =http://localhost:8000/review/create>'+"Let's Review!"+'</a>'
@@ -98,8 +104,11 @@ function shuffle(array) {
             }
             infoWindow1.open(marker.getMap(), marker); // 吹き出しの表示
             });
+            google.maps.event.addListener(marker,'click', function(event) { // マーカーに重ねたとき
+                infoWindow1.close(marker.getMap(), marker); // 吹き出しの表示
+                });
     }
-    }
+}
     
     
     //検索タブ
@@ -221,9 +230,12 @@ function shuffle(array) {
             var shopshow = "http://localhost:8000/shops/show/"+genrepin[counter2]["id"];
               var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
                   content: '<div class="sample"><p>' 
-                  + '<img src = ' + shopimage + ' width="300" height="200">'
-                  + '</p><a href ="' + shopshow + '" target="_blank">'
-                  + genrepin[counter2]["shop_name"] + '</a><br>'
+                  + '<img src = ' + shopimage + ' width="200" height="150">'
+                  + '</p><a href ="' + genrepin[counter2]['link'] + '" target="_blank">'
+                  + genrepin[counter2]["shop_name"] + '</a>('+genrepin[counter2]['genre']+')<br>'
+                  + '<p></p>'
+                  + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
+                  + '<a href =http://localhost:8000/review/create>'+"Let's Review!"+'</a>'
                   + '</div>'
                 });
               infoWindow2.push(infoWindow1);
@@ -234,5 +246,8 @@ function shuffle(array) {
               }
               infoWindow1.open(marker1.getMap(), marker); // 吹き出しの表示
               });
+              google.maps.event.addListener(marker,'click', function(event) { // マーカーに重ねたとき
+                infoWindow1.close(marker.getMap(), marker); // 吹き出しの表示
+                });
            }
                        }
