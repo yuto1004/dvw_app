@@ -122,6 +122,12 @@ main{
   color: white;
 }
 
+.shop_list{
+  color: #fff;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
 .shop_link{
   max-height: 320px;
   overflow: scroll;
@@ -129,17 +135,16 @@ main{
   margin: 30px 30px 0 30px;
   padding: 0 15px;
   text-align: left;
-  color: rgb(48, 117, 207);
 }
 
-.shop_link a:link {
-   color: #8FBDD9;
+.shop_links a:link {
+   color: #a7c4d8;
 }
-.shop_link a:visited {
-  color: #718ba5;
+.shop_links a:visited {
+  color: #8FBDD9;
 }
 
-.shop_link a:hover {
+.shop_links a:hover {
   color: #fff;
 }
 
