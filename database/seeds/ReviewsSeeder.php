@@ -12,7 +12,7 @@ class RevieweSeeder extends Seeder
      */
     public function run()
     {
-        $file = new SplFileObject('database/seeds/reviews.csv');
+        $file = new SplFileObject('/database/seeds/reviews.csv');
         $file->setFlags(SplFileObject::READ_CSV);
 
         $ary = array();
