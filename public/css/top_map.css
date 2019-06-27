@@ -2,53 +2,57 @@
     height: 100%;
     width:100%;
   }
-  #searchmap {
+#searchmap {
     height: 100%;
     width:100%;
   }
-  html, body {
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
   
-  .tab-menu {
+.tab-menu {
     margin: 0 30px 40px 30px;
   }
 
-  .left{
+.left{
     line-height: 3px;
   }
   
-  .tab-menu ul {
+.tab-menu ul {
     margin: 0;
     padding: 0;
     margin-top: 0;
   }
   
-  .tab-menu li {
+.tab-menu li {
     display: inline-block;
     width: 150px;
     height: 22px;
     padding: 10px 10px 5px;
     cursor: pointer;
-    background-color: #F8EDBF;
     border-top-right-radius: 10px;
     font-size: 14px;
-    color: #292745;
+    color: #fff;
     text-align: center;
+    border: 2px solid #fff;
   }
   
-  .tab-menu li.selected {
-    background-color: #fff;
-    color: #292745;
+.tab-menu li.selected {
+  background-color: #de650e;
+  color: #fff;
   }
   
-  .contents {
-    background-color: #fff;
+.contents {
+    border: 2px solid #fff;
     padding: 20px;
   }
   
-  .contents .right {
+.contents .right {
     display: none;
   }
+
+.radio{
+  color:#fff;
+}
