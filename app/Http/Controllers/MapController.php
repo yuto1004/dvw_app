@@ -26,4 +26,8 @@ class MapController extends Controller
         $keiro2 = $request->s[1];
         return view('search.search')->with(array('shops'=>$shops,'genres'=>$genres,'keiro1'=>$keiro1,'keiro2'=>$keiro2));
     }
+
+    public function about(){
+        return view('about_us');
+    }
 }
