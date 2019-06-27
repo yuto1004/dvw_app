@@ -26,10 +26,10 @@ class ShopsSeeder extends Seeder
             array(
               'id' => $data[0],
               'shop_name' => $data[1],
-              'genre' => $data[4],
-              'link' => $data[5],
-              'address' => $data[6],
-              'avatar' => $data[7],
+              'genre' => $data[2],
+              'link' => $data[3],
+              'address' => $data[4],
+              'avatar' => $data[5],
             )
           );
         }
