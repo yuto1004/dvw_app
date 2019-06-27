@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="shop_link">
-        <p class="allShop">寄リ道スポット一覧</p>
+          <h3><a href="/shops/index">Shop List</a></h3>
           @foreach($shops as $shop)
             <p>
               <a href = {{$shop->link}}>{{$shop->shop_name}}</a>
