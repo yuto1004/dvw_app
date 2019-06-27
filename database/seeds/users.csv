@@ -1,0 +1,5 @@
+id,"name","email","password","remember_token","created_at","updated_at"
+1,"あああ","aaaaaaa@gmail.com","$2y$10$m.iSPBmKv27xBSPY/F2WTeOVL30Ln8ILHMnzQAhzlomjcpdO9Jz1u","p1cqPfkVrRVTsLk7HB42BGdKI6IgUzswBFoNx3TFnT9whGQLw8uQXjDB4ycx","2019-06-18 06:45:06","2019-06-26 07:45:23"
+2,"杉本テスト","naiki.test@gmail.com","$2y$10$dycQP0b7M6oM6ojSvE1Y8eG3qM0vkGzEk/DPihj8GJ.gEnEnSGeLi","0a9ie84jJMYXcgZK37F5IqB9oxLFbUqTH19YlVWWlcaFtykPfcquY7SVKcuS","2019-06-26 06:41:57","2019-06-26 08:04:50"
+3,"cyu-ya★","kirakira@gmail.com","$2y$10$rzo48Tcw6r29K3Gc2nhJDujA9PTf67k2woRivr8HIToVSlQ8Nz2WS","QOSoh8hv0rCRcgptqto3BIW6OqczR1xrbc6fQNKHGaEc1IhT9N7N4Wx5jWGk","2019-06-26 06:54:40","2019-06-26 07:34:26"
+4,"miho","izumimi@gmail.com","$2y$10$Xklzn0mIdAJHT5hPffaXU.hlED1ARFTVdRbYedYZlpYpEuEnb8nTu",NULL,"2019-06-26 08:07:15","2019-06-26 08:07:15"
