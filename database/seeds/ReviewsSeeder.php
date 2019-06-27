@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Review;
 
-class RevieweSeeder extends Seeder
+class ReviewsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
