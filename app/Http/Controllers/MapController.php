@@ -24,7 +24,9 @@ class MapController extends Controller
         $genres = Shop::groupBy('genre')->get();
         $keiro1 = $request->s[0];
         $keiro2 = $request->s[1];
-        return view('search.search')->with(array('shops'=>$shops,'genres'=>$genres,'keiro1'=>$keiro1,'keiro2'=>$keiro2));
+        $reviews = Review::all();
+        return view('search.search')
+        ->with(array('shops'=>$shops,'genres'=>$genres,'keiro1'=>$keiro1,'keiro2'=>$keiro2,'reviews'=>$reviews));
     }
 
     public function about(){
