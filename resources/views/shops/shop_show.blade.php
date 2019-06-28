@@ -16,7 +16,7 @@
                         @if ( $review->images == NULL)
                             <img id=shop_avatar src="/assets/images/icon/no_image.png">
                         @else
-                            <img id="shop_avatar" src="/assets/images/review/{{ $review->images }}" alt="">
+                            <img id="shop_avatar" src="{{ $review->images }}" alt="">
                         @endif
                         <h2>{{ $review->name }}さんの投稿</h2>
                         <span class="rate rate{{ $review->rate }}0"></span>
