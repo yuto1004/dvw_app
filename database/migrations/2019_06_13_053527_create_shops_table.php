@@ -15,15 +15,14 @@ class CreateShopsTable extends Migration
         Schema::create('shops', function (Blueprint $table) {
             $table->increments('id');
             $table->string('shop_name');
-            $table->string('latitude');
-            $table->string('longitude');
             $table->string('genre');
             $table->text('link');
 
         });
         
     }
-public $timestamp = false;
+
+    public $timestamp = false;
     /**
      * Reverse the migrations.
      *
