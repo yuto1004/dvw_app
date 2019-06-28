@@ -56,13 +56,15 @@
           </div>
         </div>
         <div class="shop_link">
-          <h3><a href="/shops/index">Shop List</a></h3>
-          @foreach($shops as $shop)
-            <p>
-              <a href = {{$shop->link}}>{{$shop->shop_name}}</a>
-            </p>
-          @endforeach
-      </div>
+          <h3 class= "shop_list"><a href="/shops/index">Shop List</a></h3>
+          <div class="shop_links">
+            @foreach($shops as $shop)
+              <p>
+                <a href = {{$shop->link}}>{{$shop->shop_name}}</a>
+              </p>
+            @endforeach
+          </div>
+        </div>
     </div>
   </main>   
 @endsection
