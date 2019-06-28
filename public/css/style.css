@@ -66,8 +66,19 @@ main{
     min-height: 100vh;
     margin: 0;
 }
+
+.top_flex{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-content: space-around;
+width: 100%;
+}
+
 .content{
-    flex: 1;
+  flex:1 1 35%;
+  min-height: 400px;
+  min-width: 400px;
     text-align: center;
     margin: 50px 30px 60px;
     background-color: #302A46; 
@@ -75,7 +86,7 @@ main{
 
 .localNavigation{
   background-color:rgba(72,72,72,0.4);
-  width: 40%;
+  flex:1 1 auto;
   padding: 50px;
   margin: 50px 30px 60px;
 }
@@ -93,7 +104,7 @@ main{
     margin-right: auto;
     margin-bottom: 10px;
     height: 30px;
-    width: 300px;
+    min-width: 200px;
     border-radius: 5px;
     color: #666666;
 }
@@ -101,6 +112,7 @@ main{
 .sbtn{
   margin-left: auto;
   margin-right: auto;
+  min-width: 200px;
 }
 
 #sbtn{
