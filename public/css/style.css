@@ -76,7 +76,7 @@ width: 100%;
 
 .content{
   flex:1 1 35%;
-  min-height: 400px;
+  min-height: 600px;
   min-width: 400px;
     text-align: center;
     margin: 50px 30px 60px;
@@ -85,7 +85,8 @@ width: 100%;
 
 .localNavigation{
   background-color:rgba(72,72,72,0.4);
-  flex:1 1 auto;
+  flex:1 1 25%;
+  min-width: 400px;
   padding: 50px;
   margin: 50px 30px 60px;
 }
