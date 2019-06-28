@@ -33,7 +33,7 @@ class ReviewController extends Controller
   public function store(Request $request)
   {
     //$fileName = $request->images->getClientOriginalName();
-    $encode_image = 'data;image/' . $request->images->getClientOriginalExtension() . ';base64,' . base64_encode(file_get_contents($request->images->getRealPath()));
+    $encode_image = 'data:image/' . $request->images->getClientOriginalExtension() . ';base64,' . base64_encode(file_get_contents($request->images->getRealPath()));
     //Image::make($request->images)->save(public_path() . '/assets/images/review/' . $fileName);
     //eval(\Psy\SH());
     Review::create(
