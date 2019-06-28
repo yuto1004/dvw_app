@@ -19,7 +19,7 @@ class ShopController extends Controller
 
     public function create()
     {
-        $genres = Shop::groupBy('genre')->get();
+        $genres = Shop::groupBy('genre')->get(['genre']);
 
         return view('shops.shop_create')->with('genres',$genres);
     }

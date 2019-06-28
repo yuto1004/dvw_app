@@ -21,7 +21,7 @@ class MapController extends Controller
     
     public function search(Request $request){
         $shops = Shop::all();
-        $genres = Shop::groupBy('genre')->get();
+        $genres = Shop::groupBy('genre')->get(['genre']);
         $keiro1 = $request->s[0];
         $keiro2 = $request->s[1];
         $reviews = Review::all();
