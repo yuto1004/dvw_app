@@ -81,11 +81,11 @@ function shuffle(array) {
     //ふきだし作成。
     function fukidasi(marker){ 
         if(shoprand[counter]["avatar"]==0){
-            var shopimage = "http://localhost:8000/assets/images/icon/no_image.png";
+            var shopimage = "/assets/images/icon/no_image.png";
         } else {
             var shopimage = shoprand[counter]["avatar"];
         }
-        var shopshow = "http://localhost:8000/shops/show/"+shoprand[counter]["id"];
+        var shopshow = "/shops/show/"+shoprand[counter]["id"];
             var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
                 content: '<div class="sample"><p>' 
                 + '<img src = ' + shopimage + ' width="200" height="150">'
@@ -93,7 +93,7 @@ function shuffle(array) {
                 + shoprand[counter]["shop_name"] + '</a>('+shoprand[counter]['genre']+')<br>'
                 + '<p></p>'
                 + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
-                + '<a href =http://localhost:8000/review/create>'+"Let's Review!"+'</a>'
+                + '<a href =/review/create>'+"Let's Review!"+'</a>'
                 + '</div>',
               });
             infoWindow.push(infoWindow1);
@@ -221,13 +221,13 @@ function shuffle(array) {
            }})}
            function fukidasi(marker){
             if(genrepin[counter2]["avatar"]==0){
-                var shopimage = "http://localhost:8000/assets/images/icon/no_image.png";
+                var shopimage = "/assets/images/icon/no_image.png";
     
             } else {
                 var shopimage = genrepin[counter2]["avatar"];
     
             }
-            var shopshow = "http://localhost:8000/shops/show/"+genrepin[counter2]["id"];
+            var shopshow = "/shops/show/"+genrepin[counter2]["id"];
               var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
                   content: '<div class="sample"><p>' 
                   + '<img src = ' + shopimage + ' width="200" height="150">'
@@ -235,7 +235,7 @@ function shuffle(array) {
                   + genrepin[counter2]["shop_name"] + '</a>('+genrepin[counter2]['genre']+')<br>'
                   + '<p></p>'
                   + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
-                  + '<a href =http://localhost:8000/review/create>'+"Let's Review!"+'</a>'
+                  + '<a href =/review/create>'+"Let's Review!"+'</a>'
                   + '</div>'
                 });
               infoWindow2.push(infoWindow1);

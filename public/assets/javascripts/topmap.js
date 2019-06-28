@@ -67,7 +67,7 @@ for (var i = 0; i < markerData.length; i++) {
    //ふきだし作成。
    function fukidasi(marker){ 
        if(markerData[counter]["image"]==0){
-           var shopimage = "http://localhost:8000/assets/images/icon/no_image.png";
+           var shopimage = "/assets/images/icon/no_image.png";
        } else {
            var shopimage = markerData[counter]["image"];
        }
