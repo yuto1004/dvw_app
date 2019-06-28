@@ -19,10 +19,11 @@ class CreateShopsTable extends Migration
             $table->string('longitude');
             $table->string('genre');
             $table->text('link');
-            $table->timestamps();
-        });
-    }
 
+        });
+        
+    }
+public $timestamp = false;
     /**
      * Reverse the migrations.
      *
