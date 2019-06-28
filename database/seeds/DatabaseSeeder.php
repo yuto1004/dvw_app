@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\Review;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $file = new SplFileObject('database/seeds/users.csv');
+        $file = new SplFileObject('database/seeds/reviews.csv');
         $file->setFlags(SplFileObject::READ_CSV);
 
         $ary = array();
@@ -21,14 +21,15 @@ class DatabaseSeeder extends Seeder
 
         array_shift($ary);
         foreach($ary as $data) {
-          User::create(
+          Review::create(
             array(
-              'name' => $data[1],
-              'email' => $data[2],
-              'password' => $data[3],
-              'remember_token' => $data[4],
+              'rate' => $data[1],
+              'review' => $data[2],
+              'user_id' => $data[3],
+              'shop_id' => $data[4],
               'created_at' => $data[5],
               'updated_at' => $data[6],
+              'images'=>$data[7]
             )
           );
         }
