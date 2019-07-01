@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
 {
+    public $timestamps = false;
     protected $fillable = array('shop_name','genre','link','address');
 
     public function reviews()
