@@ -4,7 +4,7 @@
   <main>
     <div id="form-main">
       <h2>{{$name}}さんの投稿一覧</h2>
-      <ul class="shop_rate" id="list-module">
+      <div class="shop_rate" id="list-module">
         @foreach($reviews as $review)
           <div id=form-shoplist>
             <section class="flexbox_shoplist">
@@ -26,7 +26,7 @@
             </section>
           </div>
         @endforeach
-      </ul>
+      </div>
     </div>
   </main>
   {{$reviews->render()}}
