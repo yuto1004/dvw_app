@@ -640,6 +640,13 @@ h2{
   height: 250px;
 }
 
+.shop_title{
+  text-align: center;
+  color: #fff;
+  word-wrap: break-word;
+ overflow-wrap: break-word;
+}
+
 h3 a{
   text-decoration: none;
   color: #fff;
@@ -672,6 +679,8 @@ h3{
   margin: 10px 0;
   text-align: left;
   color: rgb(48, 117, 207);
+  word-wrap: break-word;
+ overflow-wrap: break-word;
 }
 
 .head_explain{
