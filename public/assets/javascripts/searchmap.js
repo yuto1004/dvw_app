@@ -64,12 +64,12 @@ function shuffle(array) {
             position: result,
             animation: google.maps.Animation.DROP,
             opacity:1,
-
             label: {
                 text: shoprand[counter]['genre'].slice(0,1),                           //ラベル文字
                 color: 'black',                    //文字の色
                 fontSize: '20px'                     //文字のサイズ
             }
+            
         });
         marker1.setMap(map);
         marker.push(marker1);
@@ -93,7 +93,7 @@ function shuffle(array) {
                 + shoprand[counter]["shop_name"] + '</a>('+shoprand[counter]['genre']+')<br>'
                 + '<p></p>'
                 + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
-                + '<a href =/review/create>'+"Let's Review!"+'</a>'
+                + '<a href =/review/creation/' + shoprand[counter]['id'] +'>'+"Let's Review!"+'</a>'
                 + '</div>',
               });
             infoWindow.push(infoWindow1);

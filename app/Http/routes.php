@@ -16,6 +16,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::resource('/shops', 'ShopController');
 
     Route::resource('/review', 'ReviewController');
+    Route::get('/review/creation/{id}','ReviewController@creation');
 
     Route::get('/review/{id}/delete', 'ReviewController@destroy');
 
