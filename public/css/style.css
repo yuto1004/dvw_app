@@ -641,6 +641,7 @@ h2{
 }
 
 .shop_title{
+  width: 320px;
   text-align: center;
   color: #fff;
   word-wrap: break-word;
