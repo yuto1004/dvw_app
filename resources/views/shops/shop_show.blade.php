@@ -9,7 +9,7 @@
             <h2>
             <span class="rate rate{{ round($shop->reviews()->avg('rate')) }}0"></span>
             </h2>
-            <ul class="shop_rate" id="list-module">
+            <div class="shop_rate" id="list-module">
                 @foreach( $reviews as $review )
                     <div id=form-shoplist>
                         <section class="flexbox_shoplist">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 @endforeach
-            </ul>
+            </div>
         </div>
     </main>
 @endsection
