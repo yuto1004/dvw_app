@@ -235,7 +235,7 @@ function shuffle(array) {
                   + genrepin[counter2]["shop_name"] + '</a>('+genrepin[counter2]['genre']+')<br>'
                   + '<p></p>'
                   + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
-                  + '<a href =/review/create>'+"Let's Review!"+'</a>'
+                  + '<a href =/review/creation/' + genrepin[counter2]['id'] +'>'+"Let's Review!"+'</a>'
                   + '</div>'
                 });
               infoWindow2.push(infoWindow1);
