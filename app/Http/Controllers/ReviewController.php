@@ -49,6 +49,12 @@ class ReviewController extends Controller
     return view('reviews.store');
   }
 
+  public function creation($id)
+  {
+    $shop = Shop::find($id);
+    return view('reviews.creation')->with('shop',$shop);
+  }
+
   public function edit($id)
   {
     $review = Review::find($id);
