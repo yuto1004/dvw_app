@@ -44,43 +44,48 @@ function shuffle(array) {
     }
     return array;
   }
-  shoprand = shuffle(shops);
+  
+  var shops1 = shops.slice();
+  //console.log(shops1);
+  var shoprand = shuffle(shops);
+  //console.log(shoprand);
 
 
 
 //ここからマーカー処理
-    for (var i = 0; i < shops.length; i++) {
+    for (var i = 0; i < 10; i++) {
         var geocoder = new google.maps.Geocoder();
-        　    geocoder.geocode(
-        {
+        geocoder.geocode(
+          {
             'address': shoprand[i]['address'],
             'region': 'jp',
           },
           function (results, status){
               
             if(status===google.maps.GeocoderStatus.OK){
-            var result = results[0].geometry.location;
-            marker1 = new google.maps.Marker({
-            position: result,
-            animation: google.maps.Animation.DROP,
-            opacity:1,
-            label: {
-                text: shoprand[counter]['genre'].slice(0,1),                           //ラベル文字
-                color: 'black',                    //文字の色
-                fontSize: '20px'                     //文字のサイズ
+                var result = results[0].geometry.location;
+                var marker1 = new google.maps.Marker({
+                position: result,
+                animation: google.maps.Animation.DROP,
+                opacity:1,
+                label: {
+                    text: shoprand[counter]['genre'].slice(0,1),   //ラベル文字
+                    color: 'black',                                //文字の色
+                    fontSize: '20px'                               //文字のサイズ
+                    }   
+                });
+                marker1.setMap(map);
+                marker.push(marker1);
+                fukidasi(marker1);
+            }else{
+                alert("error");
             }
-            
-        });
-        marker1.setMap(map);
-        marker.push(marker1);
-        fukidasi(marker1);
+        })
     }
-          })
-        }
 
     //ふきだし作成。
     function fukidasi(marker){ 
-        if(shoprand[counter]["avatar"]==0){
+        if(shoprand[counter]["avatar"] == null){
             var shopimage = "/assets/images/icon/no_image.png";
         } else {
             var shopimage = shoprand[counter]["avatar"];
@@ -97,16 +102,19 @@ function shuffle(array) {
                 + '</div>',
               });
             infoWindow.push(infoWindow1);
-            counter++;
-        google.maps.event.addListener(marker,'mouseover', function(event) { // マーカーに重ねたとき
+            
+            google.maps.event.addListener(marker,'mouseover', function(event) { // マーカーに重ねたとき
             for(var j=0;j<infoWindow.length;j++){
                 infoWindow[j].close();
             }
             infoWindow1.open(marker.getMap(), marker); // 吹き出しの表示
+            //console.log(marker);
+            //console.log(infoWindow1);
             });
             google.maps.event.addListener(marker,'click', function(event) { // マーカーに重ねたとき
                 infoWindow1.close(marker.getMap(), marker); // 吹き出しの表示
-                });
+            });
+        counter++;
     }
 }
     
@@ -220,7 +228,7 @@ function shuffle(array) {
            fukidasi(marker1);
            }})}
            function fukidasi(marker){
-            if(genrepin[counter2]["avatar"]==0){
+            if(genrepin[counter2]["avatar"] == null){
                 var shopimage = "/assets/images/icon/no_image.png";
     
             } else {

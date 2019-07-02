@@ -53,7 +53,7 @@ for (var i = 0; i < markerData.length; i++) {
              
            if(status===google.maps.GeocoderStatus.OK){
            var result = results[0].geometry.location;
-           marker1 = new google.maps.Marker({
+           var marker1 = new google.maps.Marker({
            position: result,
            icon:markerData[counter]['icon']
        });
