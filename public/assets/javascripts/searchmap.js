@@ -45,11 +45,11 @@ function shuffle(array) {
     return array;
   }
   
-  var shops1 = shops.slice();
+  
   //console.log(shops1);
   var shoprand = shuffle(shops);
-  //console.log(shoprand);
-
+  console.log(shoprand);
+　var shops1 = shoprand.slice();
 
 
 //ここからマーカー処理
@@ -57,7 +57,7 @@ function shuffle(array) {
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode(
           {
-            'address': shoprand[i]['address'],
+            'address': shops1[i]['address'],
             'region': 'jp',
           },
           function (results, status){
@@ -69,7 +69,7 @@ function shuffle(array) {
                 animation: google.maps.Animation.DROP,
                 opacity:1,
                 label: {
-                    text: shoprand[counter]['genre'].slice(0,1),   //ラベル文字
+                    text: shops1[counter]['genre'].slice(0,1),   //ラベル文字
                     color: 'black',                                //文字の色
                     fontSize: '20px'                               //文字のサイズ
                     }   
@@ -85,20 +85,20 @@ function shuffle(array) {
 
     //ふきだし作成。
     function fukidasi(marker){ 
-        if(shoprand[counter]["avatar"] == null){
+        if(shops1[counter]["avatar"] == null){
             var shopimage = "/assets/images/icon/no_image.png";
         } else {
-            var shopimage = shoprand[counter]["avatar"];
+            var shopimage = shops1[counter]["avatar"];
         }
-        var shopshow = "/shops/show/"+shoprand[counter]["id"];
+        var shopshow = "/shops/show/"+shops1[counter]["id"];
             var infoWindow1 = new google.maps.InfoWindow({ // 吹き出しの追加
                 content: '<div class="sample"><p>' 
                 + '<img src = ' + shopimage + ' width="200" height="150">'
-                + '</p><a href ="'+shoprand[counter]['link']+ '"target="_blank">'
-                + shoprand[counter]["shop_name"] + '</a>('+shoprand[counter]['genre']+')<br>'
+                + '</p><a href ="'+shops1[counter]['link']+ '"target="_blank">'
+                + shops1[counter]["shop_name"] + '</a>('+shops1[counter]['genre']+')<br>'
                 + '<p></p>'
                 + '<a href ='+ shopshow +'>Read Review!</a>'+"  /   "
-                + '<a href =/review/creation/' + shoprand[counter]['id'] +'>'+"Let's Review!"+'</a>'
+                + '<a href =/review/creation/' + shops1[counter]['id'] +'>'+"Let's Review!"+'</a>'
                 + '</div>',
               });
             infoWindow.push(infoWindow1);
